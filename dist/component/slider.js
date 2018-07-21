@@ -1,0 +1,545 @@
+// { "framework": "Vue"} 
+
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(1)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(2)
+
+/* template */
+var __vue_template__ = __webpack_require__(3)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/slider.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-6bb6c69c"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 1:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "ui-list": {
+    "width": "750",
+    "position": "absolute",
+    "top": "0",
+    "bottom": "0",
+    "left": "0",
+    "right": "0"
+  },
+  "ui-list-cell": {
+    "width": "750"
+  },
+  "ui-list-inner": {
+    "display": "flex",
+    "borderBottomWidth": "1",
+    "borderBottomColor": "#E9E9E9",
+    "borderBottomStyle": "solid",
+    "marginLeft": "86",
+    "position": "relative",
+    "paddingTop": "30",
+    "paddingBottom": "30",
+    "flexDirection": "row",
+    "height": "180",
+    "//marginLeft": "106"
+  },
+  "ui-list-thumb": {
+    "width": "120",
+    "height": "120",
+    "marginRight": "20"
+  },
+  "ui-list-img": {
+    "width": "120",
+    "height": "120"
+  },
+  "ui-thumb-img": {
+    "width": "120",
+    "height": "120"
+  },
+  "ui-list-info": {
+    "display": "flex",
+    "justifyContent": "center",
+    "flex": 1,
+    "paddingRight": "168"
+  },
+  "info-h3": {
+    "color": "#000000",
+    "fontSize": "32",
+    "lines": 1,
+    "textOverflow": "ellipsis"
+  },
+  "info-p": {
+    "color": "#888899",
+    "fontSize": "24"
+  },
+  "ui-btn": {
+    "position": "absolute",
+    "right": 0,
+    "top": "0",
+    "width": "128",
+    "height": "60",
+    "borderRadius": "60",
+    "borderWidth": "2",
+    "borderColor": "#888899",
+    "justifyContent": "center",
+    "color": "#888899",
+    "background": "transparent",
+    "opacity": 1,
+    "outline:focus": "none",
+    "opacity:active": 0.5
+  },
+  "ui-btn-text": {
+    "fontSize": "24",
+    "textAlign": "center"
+  },
+  "ui-btn-primary": {
+    "borderWidth": 0,
+    "backgroundImage": "linear-gradient(to right,#FFD980,#E6BC5C)"
+  },
+  "ui-btn-progress": {
+    "position": "absolute",
+    "backgroundImage": "none",
+    "backgroundColor": "#FFD980",
+    "overflow": "hidden",
+    "paddingLeft": "2",
+    "paddingRight": "2",
+    "paddingTop": "2",
+    "paddingBottom": "2",
+    "alignItems": "center",
+    "zIndex": 2
+  },
+  "btn-progress-inner": {
+    "backgroundColor": "#ffffff",
+    "position": "absolute",
+    "left": "2",
+    "top": "2",
+    "right": "2",
+    "height": "56",
+    "borderRadius": "60"
+  },
+  "btn-progress-bar": {
+    "position": "absolute",
+    "left": 0,
+    "top": 0,
+    "height": "60",
+    "width": 50,
+    "backgroundImage": "linear-gradient(to right,#FFD980,#E6BC5C)",
+    "//borderTopLeftRadius": "60",
+    "//borderBottomLeftRadius": "60"
+  },
+  "btn-progress-text": {
+    "position": "relative",
+    "zIndex": 1,
+    "color": "#000000"
+  },
+  "star-wrap": {
+    "flexDirection": "row",
+    "alignItems": "center"
+  },
+  "star": {
+    "width": "20",
+    "height": "19",
+    "marginRight": "3"
+  },
+  "scroe-text": {
+    "fontSize": "24",
+    "color": "#E6B035",
+    "marginLeft": "10"
+  },
+  "slider": {
+    "position": "absolute",
+    "top": "88",
+    "bottom": "0",
+    "width": "750"
+  },
+  "list-rank": {
+    "width": "86",
+    "height": "38",
+    "position": "absolute",
+    "left": "0",
+    "top": "70",
+    "alignItems": "center"
+  },
+  "list-rank-num": {
+    "width": "60",
+    "fontSize": "32",
+    "textAlign": "center"
+  },
+  "rank-icon": {
+    "position": "absolute",
+    "width": "30",
+    "height": "30",
+    "left": "60",
+    "top": "4"
+  },
+  "empty-cell": {
+    "width": "750",
+    "position": "absolute",
+    "top": "0",
+    "bottom": "88",
+    "left": "0",
+    "right": "0",
+    "zIndex": 9999,
+    "alignItems": "center",
+    "justifyContent": "center"
+  },
+  "btn-position": {
+    "position": "absolute",
+    "right": "30",
+    "top": "60",
+    "width": "128",
+    "height": "64"
+  },
+  "wait": {
+    "position": "absolute",
+    "right": "30",
+    "top": "60",
+    "width": "128",
+    "height": "60",
+    "justifyContent": "center",
+    "alignItems": "center"
+  },
+  "wait-text": {
+    "fontSize": "28",
+    "color": "#b2b2b2"
+  }
+}
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var platform = weex.config.env.platform;
+
+var isWeb = (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && platform.toLowerCase() === 'web';
+var bbc = new BroadcastChannel('game-list');
+exports.default = {
+    components: {},
+    data: function data() {
+        return {
+            avatarUrl: 'http://placeholder.qiniudn.com/100x100',
+            photoUrl: 'http://placeholder.qiniudn.com/750x422',
+            linkImg: {
+                up: 'http://111.231.236.41/demo/sam/weex/image/up.png',
+                down: 'http://111.231.236.41/demo/sam/weex/image/down.png',
+                hold: 'http://111.231.236.41/demo/sam/weex/image/hold.png',
+                stared: 'http://111.231.236.41/demo/sam/weex/image/stared.png',
+                star: 'http://111.231.236.41/demo/sam/weex/image/star.png',
+                placeholderImg: 'http://111.231.236.41/demo/sam/weex/image/game.png'
+            },
+            isDownload: false,
+            btnProgress: 0,
+            btnProgressText: this.isDownload ? '0%' : '下载'
+        };
+    },
+
+
+    computed: {
+        downloadBtnClass: function downloadBtnClass() {
+            return this.isDownload ? ['ui-btn', 'ui-btn-primary', 'ui-btn-progress'] : ['ui-btn'];
+        },
+        downloadBtnTextClass: function downloadBtnTextClass() {
+            return this.isDownload ? ['ui-btn-text', 'btn-progress-text'] : ['ui-btn-text'];
+        },
+        positionStyle: function positionStyle() {
+            return weex.config.env.platform == 'android' ? 'absolute' : 'fixed';
+        }
+    },
+    methods: {
+        sliderChanged: function sliderChanged(e) {
+            // bbc.postMessage({currentPage:e.index});
+        },
+        downloadGame: function downloadGame() {
+            var self = this;
+            var btnWidth = isWeb ? 68 : 136;
+            self.isDownload = true;
+            self.btnProgressText = self.isDownload ? '0%' : '下载';
+            var run = setInterval(function () {
+                self.btnProgress += 4;
+                self.btnProgressText = parseInt(self.btnProgress / btnWidth * 100) + '%';
+                if (self.btnProgress == btnWidth) {
+                    self.btnProgress = 0;
+                    self.isDownload = false;
+                    self.btnProgressText = '下载';
+                    clearInterval(run);
+                }
+            }, 50);
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 3:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('slider', {
+    staticClass: ["slider"],
+    on: {
+      "change": _vm.sliderChanged
+    }
+  }, _vm._l((7), function(item, i) {
+    return _c('list', {
+      staticClass: ["ui-list"]
+    }, _vm._l((16), function(item, index) {
+      return _c('cell', {
+        staticClass: ["ui-list-cell"],
+        appendAsTree: true,
+        attrs: {
+          "append": "tree"
+        }
+      }, [_c('div', {
+        staticClass: ["list-rank"]
+      }, [_c('text', {
+        staticClass: ["list-rank-num"]
+      }, [_vm._v(_vm._s(1 + index))]), (false) ? _c('div', [(index == 0) ? _c('image', {
+        staticClass: ["rank-icon", "rank-up"],
+        attrs: {
+          "src": _vm.linkImg.up
+        }
+      }) : _vm._e(), (index == 1) ? _c('image', {
+        staticClass: ["rank-icon", "rank-down"],
+        attrs: {
+          "src": _vm.linkImg.down
+        }
+      }) : _vm._e(), (index > 1) ? _c('image', {
+        staticClass: ["rank-icon", "rank-hold"],
+        attrs: {
+          "src": _vm.linkImg.hold
+        }
+      }) : _vm._e()]) : _vm._e()]), _c('div', {
+        staticClass: ["ui-list-inner"]
+      }, [_c('div', {
+        staticClass: ["ui-list-thumb"]
+      }, [_c('image', {
+        staticClass: ["ui-list-img"],
+        attrs: {
+          "src": _vm.linkImg.placeholderImg
+        }
+      })]), _c('div', {
+        staticClass: ["ui-list-info"]
+      }, [_c('text', {
+        staticClass: ["info-h3"]
+      }, [_vm._v("全民飞机全民飞机全民飞机全民飞机全民飞机")]), _c('div', {
+        staticClass: ["star-wrap"]
+      }, [_vm._l((4), function(item) {
+        return _c('image', {
+          staticClass: ["star"],
+          attrs: {
+            "src": _vm.linkImg.stared
+          }
+        })
+      }), _c('image', {
+        staticClass: ["star"],
+        attrs: {
+          "src": _vm.linkImg.star
+        }
+      }), _c('text', {
+        staticClass: ["scroe-text"]
+      }, [_vm._v("9.2分")])], 2), _c('text', {
+        staticClass: ["info-p"]
+      }, [_vm._v("293881人已安装")])]), (index == 3) ? _c('div', {
+        staticClass: ["wait"]
+      }, [_c('text', {
+        staticClass: ["wait-text"]
+      }, [_vm._v("敬请期待")])]) : _c('div', {
+        staticClass: ["btn-position"]
+      }, [(index != 2) ? _c('div', {
+        staticClass: ["ui-btn"]
+      }, [_c('text', {
+        staticClass: ["ui-btn-text"]
+      }, [_vm._v("下载")])]) : _vm._e(), (index === 2) ? _c('div', {
+        class: _vm.downloadBtnClass,
+        on: {
+          "click": _vm.downloadGame
+        }
+      }, [(_vm.isDownload) ? _c('div', {
+        staticClass: ["btn-progress-inner"]
+      }) : _vm._e(), (_vm.isDownload) ? _c('div', {
+        staticClass: ["btn-progress-bar"],
+        style: {
+          width: _vm.btnProgress + 'px'
+        }
+      }) : _vm._e(), _c('text', {
+        class: _vm.downloadBtnTextClass
+      }, [_vm._v(_vm._s(_vm.btnProgressText))])]) : _vm._e()])])])
+    }))
+  }))
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 46:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _slider = __webpack_require__(0);
+
+var _slider2 = _interopRequireDefault(_slider);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_slider2.default.el = '#root';
+new Vue(_slider2.default);
+
+/***/ })
+
+/******/ });
