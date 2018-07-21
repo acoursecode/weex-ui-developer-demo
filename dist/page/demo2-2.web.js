@@ -8930,8 +8930,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "juhua1 weex-el weex-image",
     class: _vm.animating ? 'animating' : '',
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/juhua.png",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/juhua.png",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png",
       "weex-type": "image"
     }
   })]), _vm._v(" "), _c('div', {
@@ -8961,8 +8961,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "juhua",
     staticClass: "juhua2 weex-el weex-image",
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/juhua.png",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/juhua.png",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png",
       "weex-type": "image"
     }
   })])])

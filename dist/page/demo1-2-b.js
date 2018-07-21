@@ -294,7 +294,7 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return _c('scroller', {
     staticClass: ["wrapper"]
   }, [_c('div', {
     staticClass: ["ui-panel"]
@@ -334,7 +334,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('image', {
     staticClass: ["image-logo"],
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.png"
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.png"
     }
   })]), _c('div', {
     staticClass: ["grid2-item"]
@@ -350,7 +350,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('image', {
     staticClass: ["image-logo"],
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.jpg"
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.jpg"
     }
   })]), _c('div', {
     staticClass: ["grid2-item"]
@@ -366,7 +366,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('image', {
     staticClass: ["image-logo-gif"],
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.gif"
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.gif"
     }
   })]), _c('div', {
     staticClass: ["grid2-item"]

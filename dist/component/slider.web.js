@@ -350,12 +350,12 @@ exports.default = {
             avatarUrl: 'http://placeholder.qiniudn.com/100x100',
             photoUrl: 'http://placeholder.qiniudn.com/750x422',
             linkImg: {
-                up: 'http://111.231.236.41/demo/sam/weex/image/up.png',
-                down: 'http://111.231.236.41/demo/sam/weex/image/down.png',
-                hold: 'http://111.231.236.41/demo/sam/weex/image/hold.png',
-                stared: 'http://111.231.236.41/demo/sam/weex/image/stared.png',
-                star: 'http://111.231.236.41/demo/sam/weex/image/star.png',
-                placeholderImg: 'http://111.231.236.41/demo/sam/weex/image/game.png'
+                up: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/up.png',
+                down: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/down.png',
+                hold: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/hold.png',
+                stared: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/stared.png',
+                star: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/star.png',
+                placeholderImg: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/game.png'
             },
             isDownload: false,
             btnProgress: 0,

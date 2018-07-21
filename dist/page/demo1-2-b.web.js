@@ -579,11 +579,9 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "wrapper weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
+  return _c('scroller', {
+    staticClass: "wrapper",
+    attrs: {}
   }, [_c('div', {
     staticClass: "ui-panel weex-ct weex-div",
     attrs: {
@@ -661,8 +659,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('figure', {
     staticClass: "image-logo weex-el weex-image",
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.png",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/logo.png",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.png",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.png",
       "weex-type": "image"
     }
   })]), _vm._v(" "), _c('div', {
@@ -690,8 +688,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('figure', {
     staticClass: "image-logo weex-el weex-image",
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.jpg",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/logo.jpg",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.jpg",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.jpg",
       "weex-type": "image"
     }
   })]), _vm._v(" "), _c('div', {
@@ -719,8 +717,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('figure', {
     staticClass: "image-logo-gif weex-el weex-image",
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.gif",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/logo.gif",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.gif",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.gif",
       "weex-type": "image"
     }
   })]), _vm._v(" "), _c('div', {

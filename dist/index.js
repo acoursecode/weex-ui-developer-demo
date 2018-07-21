@@ -371,12 +371,12 @@ exports.default = {
             avatarUrl: 'http://placeholder.qiniudn.com/100x100',
             photoUrl: 'http://placeholder.qiniudn.com/750x422',
             linkImg: {
-                up: 'http://111.231.236.41/demo/sam/weex/image/up.png',
-                down: 'http://111.231.236.41/demo/sam/weex/image/down.png',
-                hold: 'http://111.231.236.41/demo/sam/weex/image/hold.png',
-                stared: 'http://111.231.236.41/demo/sam/weex/image/stared.png',
-                star: 'http://111.231.236.41/demo/sam/weex/image/star.png',
-                placeholderImg: 'http://111.231.236.41/demo/sam/weex/image/game.png'
+                up: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/up.png',
+                down: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/down.png',
+                hold: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/hold.png',
+                stared: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/stared.png',
+                star: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/star.png',
+                placeholderImg: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/game.png'
             },
             isDownload: false,
             btnProgress: 0,
@@ -910,7 +910,7 @@ exports.default = {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return _c('scroller', {
     staticClass: ["wrapper"]
   }, [_c('text', {
     staticClass: ["h2"]
@@ -1222,7 +1222,7 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return _c('scroller', {
     staticClass: ["wrapper"]
   }, [_c('div', {
     staticClass: ["ui-panel"]
@@ -1262,7 +1262,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('image', {
     staticClass: ["image-logo"],
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.png"
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.png"
     }
   })]), _c('div', {
     staticClass: ["grid2-item"]
@@ -1278,7 +1278,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('image', {
     staticClass: ["image-logo"],
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.jpg"
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.jpg"
     }
   })]), _c('div', {
     staticClass: ["grid2-item"]
@@ -1294,7 +1294,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('image', {
     staticClass: ["image-logo-gif"],
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.gif"
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.gif"
     }
   })]), _c('div', {
     staticClass: ["grid2-item"]
@@ -2354,7 +2354,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["juhua1"],
     class: _vm.animating ? 'animating' : '',
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/juhua.png"
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png"
     }
   })]), _c('div', {
     staticClass: ["btn"],
@@ -2371,7 +2371,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "juhua",
     staticClass: ["juhua2"],
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/juhua.png"
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png"
     }
   })])])
 },staticRenderFns: []}
@@ -4659,7 +4659,7 @@ exports.default = {
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', {
+  return _c('div', {
     staticClass: ["wrapper"]
   }, [_c('div', {
     staticClass: ["header-bar"]
@@ -4676,7 +4676,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["back-btn-txt"]
   }, [_vm._v(" < 返回")])]) : _vm._e()]), _c('div', {
     staticClass: ["header-bar-placeholder"]
-  }), (_vm.currentPage == 'index') ? _c('div', {
+  }), (_vm.currentPage == 'index') ? _c('scroller', {
     staticClass: ["scroller"]
   }, [_c('text', {
     staticClass: ["h1"]

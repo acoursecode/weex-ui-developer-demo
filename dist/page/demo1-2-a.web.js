@@ -547,11 +547,9 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "wrapper weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
+  return _c('scroller', {
+    staticClass: "wrapper",
+    attrs: {}
   }, [_c('p', {
     staticClass: "h2 weex-el weex-text",
     attrs: {

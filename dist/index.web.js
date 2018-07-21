@@ -19786,12 +19786,12 @@ exports.default = {
             avatarUrl: 'http://placeholder.qiniudn.com/100x100',
             photoUrl: 'http://placeholder.qiniudn.com/750x422',
             linkImg: {
-                up: 'http://111.231.236.41/demo/sam/weex/image/up.png',
-                down: 'http://111.231.236.41/demo/sam/weex/image/down.png',
-                hold: 'http://111.231.236.41/demo/sam/weex/image/hold.png',
-                stared: 'http://111.231.236.41/demo/sam/weex/image/stared.png',
-                star: 'http://111.231.236.41/demo/sam/weex/image/star.png',
-                placeholderImg: 'http://111.231.236.41/demo/sam/weex/image/game.png'
+                up: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/up.png',
+                down: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/down.png',
+                hold: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/hold.png',
+                stared: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/stared.png',
+                star: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/star.png',
+                placeholderImg: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/game.png'
             },
             isDownload: false,
             btnProgress: 0,
@@ -20379,11 +20379,9 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "wrapper weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
+  return _c('scroller', {
+    staticClass: "wrapper",
+    attrs: {}
   }, [_c('p', {
     staticClass: "h2 weex-el weex-text",
     attrs: {
@@ -20783,11 +20781,9 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "wrapper weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
+  return _c('scroller', {
+    staticClass: "wrapper",
+    attrs: {}
   }, [_c('div', {
     staticClass: "ui-panel weex-ct weex-div",
     attrs: {
@@ -20865,8 +20861,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('figure', {
     staticClass: "image-logo weex-el weex-image",
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.png",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/logo.png",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.png",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.png",
       "weex-type": "image"
     }
   })]), _vm._v(" "), _c('div', {
@@ -20894,8 +20890,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('figure', {
     staticClass: "image-logo weex-el weex-image",
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.jpg",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/logo.jpg",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.jpg",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.jpg",
       "weex-type": "image"
     }
   })]), _vm._v(" "), _c('div', {
@@ -20923,8 +20919,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('figure', {
     staticClass: "image-logo-gif weex-el weex-image",
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/logo.gif",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/logo.gif",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.gif",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/logo.gif",
       "weex-type": "image"
     }
   })]), _vm._v(" "), _c('div', {
@@ -22232,8 +22228,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "juhua1 weex-el weex-image",
     class: _vm.animating ? 'animating' : '',
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/juhua.png",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/juhua.png",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png",
       "weex-type": "image"
     }
   })]), _vm._v(" "), _c('div', {
@@ -22263,8 +22259,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     ref: "juhua",
     staticClass: "juhua2 weex-el weex-image",
     attrs: {
-      "src": "http://111.231.236.41/demo/sam/weex/image/juhua.png",
-      "data-img-src": "http://111.231.236.41/demo/sam/weex/image/juhua.png",
+      "src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png",
+      "data-img-src": "https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/juhua.png",
       "weex-type": "image"
     }
   })])])
@@ -24497,9 +24493,11 @@ exports.default = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('scroller', {
-    staticClass: "wrapper",
-    attrs: {}
+  return _c('div', {
+    staticClass: "wrapper weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
   }, [_c('div', {
     staticClass: "header-bar weex-ct weex-div",
     attrs: {
@@ -24533,11 +24531,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }), _vm._v(" "), (_vm.currentPage == 'index') ? _c('div', {
-    staticClass: "scroller weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
+  }), _vm._v(" "), (_vm.currentPage == 'index') ? _c('scroller', {
+    staticClass: "scroller",
+    attrs: {}
   }, [_c('p', {
     staticClass: "h1 weex-el weex-text",
     attrs: {
