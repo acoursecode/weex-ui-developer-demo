@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 46);
+/******/ 	return __webpack_require__(__webpack_require__.s = 51);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -245,7 +245,7 @@ module.exports = {
   },
   "slider": {
     "position": "absolute",
-    "top": "88",
+    "top": "188",
     "bottom": "0",
     "width": "750"
   },
@@ -361,7 +361,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 //
 //
 //
-//
 
 var platform = weex.config.env.platform;
 
@@ -401,7 +400,7 @@ exports.default = {
     },
     methods: {
         sliderChanged: function sliderChanged(e) {
-            // bbc.postMessage({currentPage:e.index});
+            bbc.postMessage({ currentPage: e.index });
         },
         downloadGame: function downloadGame() {
             var self = this;
@@ -433,7 +432,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "change": _vm.sliderChanged
     }
-  }, _vm._l((7), function(item, i) {
+  }, _vm._l((7), function(v, i) {
     return _c('list', {
       staticClass: ["ui-list"]
     }, _vm._l((16), function(item, index) {
@@ -477,7 +476,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: ["info-h3"]
       }, [_vm._v("全民飞机全民飞机全民飞机全民飞机全民飞机")]), _c('div', {
         staticClass: ["star-wrap"]
-      }, [_vm._l((4), function(item) {
+      }, [_vm._l((4), function(s, j) {
         return _c('image', {
           staticClass: ["star"],
           attrs: {
@@ -525,7 +524,7 @@ module.exports.render._withStripped = true
 
 /***/ }),
 
-/***/ 46:
+/***/ 51:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

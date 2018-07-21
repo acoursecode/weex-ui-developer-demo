@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 69);
+/******/ 	return __webpack_require__(__webpack_require__.s = 75);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -94,103 +94,6 @@ module.exports = g;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -377,6 +280,103 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
 
 
 /***/ }),
@@ -8728,7 +8728,7 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(0), __webpack_require__(6).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(0), __webpack_require__(6).setImmediate))
 
 /***/ }),
 /* 6 */
@@ -8991,7 +8991,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
 
 /***/ }),
 /* 8 */
@@ -19640,7 +19640,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(11)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(13),
   /* template */
@@ -19710,7 +19710,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.ui-list[data-v-343daabe]{\r\n    width: 10rem;\n}\n.ui-list-cell[data-v-343daabe]{\r\n    width:10rem;\n}\n.ui-list-inner[data-v-343daabe]{\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: flex;\r\n    border-bottom-width: 1px;\r\n    border-bottom-color: #E9E9E9;\r\n    border-bottom-style: solid;\r\n    margin-left: 0.4rem;\r\n    position: relative;\r\n    padding-top: 0.4rem;\r\n    padding-bottom: 0.4rem;\r\n    flex-direction: row;\r\n    height:2.4rem;\n}\n.ui-list-thumb[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\r\n    margin-right:0.26667rem;\n}\n.ui-list-img[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\n}\n.ui-thumb-img[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\n}\n.ui-list-info[data-v-343daabe]{\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: flex;\r\n    justify-content: center;\n}\n.info-h3[data-v-343daabe]{\r\n    color:#000000;\r\n    font-size: 0.42667rem;\n}\n.info-p[data-v-343daabe]{\r\n    color:#888899;\r\n    font-size: 0.32rem;\n}\n.ui-btn[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\n}\n/*btn*/\n.ui-btn[data-v-343daabe]{\r\n    width: 1.70667rem;\r\n    height: 0.8rem;\r\n    border-radius: 0.8rem;\r\n    border-width: 0.02667rem;\r\n    border-color: #888899;\r\n    justify-content: center;\r\n    color:#888899;\r\n    background:transparent;\r\n    opacity: 1;\n}\n.ui-btn[data-v-343daabe]:focus{\r\n    outline: none;\n}\n.ui-btn-text[data-v-343daabe]{\r\n    font-size: 0.32rem;\r\n    text-align: center;\n}\n.ui-btn[data-v-343daabe]:active{\r\n    opacity: .5;\n}\n.ui-btn-primary[data-v-343daabe]{\r\n    border-width: 0;\r\n    background-image: -webkit-linear-gradient(left,#FFD980,#E6BC5C);\r\n    background-image: linear-gradient(to right,#FFD980,#E6BC5C);\n}\n.ui-btn-progress[data-v-343daabe]{\r\n    position: relative;\r\n    background-image: none;\r\n    background-color: #FFD980;\r\n    overflow: hidden;\r\n    padding-left: 0.02667rem;\r\n    padding-right: 0.02667rem;\r\n    padding-top: 0.02667rem;\r\n    padding-bottom: 0.02667rem;\r\n    align-items: center;\r\n    z-index: 2;\n}\n.btn-progress-inner[data-v-343daabe]{\r\n    background-color: #fff;\r\n    position: absolute;\r\n    left: 0.02667rem;\r\n    top:0.02667rem;\r\n    right:0.02667rem;\r\n    height: 0.74667rem;\r\n    border-radius: 0.8rem;\n}\n.btn-progress-bar[data-v-343daabe]{\r\n    position: absolute;\r\n    left: 0;\r\n    top:0;\r\n    height: 0.8rem;\r\n    width: 50%;\r\n    background-image: -webkit-linear-gradient(left,#FFD980,#E6BC5C);\r\n    background-image: linear-gradient(to right,#FFD980,#E6BC5C);\r\n    //border-top-left-radius: 0.8rem;\r\n    //border-bottom-left-radius: 0.8rem;\n}\n.btn-progress-text[data-v-343daabe]{\r\n    position: relative;\r\n    z-index: 1;\r\n    color: #000;\n}\n.star-wrap[data-v-343daabe]{\r\n  flex-direction: row;\r\n  align-items: center;\n}\n.star[data-v-343daabe]{\r\n  width: 0.26667rem;\r\n  height: 0.25333rem;\r\n  margin-right: 0.04rem;\n}\n.scroe-text[data-v-343daabe]{\r\n  font-size: 0.32rem;\r\n  color: #E6B035;\r\n  margin-left: 0.13333rem;\n}\n.slider[data-v-343daabe]{\r\n    position: absolute;\r\n    top:1.17333rem;\r\n    bottom:0px;\r\n    width:10rem;\n}\n.ui-list[data-v-343daabe]{\r\n    position:absolute;\r\n    top:0px;\r\n    bottom:0px;\r\n    left:0px;\r\n    right:0px;\n}\n.list-rank[data-v-343daabe]{\r\n    width: 1.14667rem;\r\n    height: 0.50667rem;\r\n    position: absolute;\r\n    left: 0px;\r\n    top:0.93333rem;\r\n    align-items: center;\n}\n.info-h3[data-v-343daabe]{\r\n    lines:1;\r\n    text-overflow:ellipsis;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    -webkit-line-clamp: 1;\n}\n.list-rank-num[data-v-343daabe]{\r\n    width:0.8rem;\r\n    font-size:0.42667rem;\r\n    text-align: center;\n}\n.ui-list-inner[data-v-343daabe]{\r\n    //margin-left:1.41333rem;\r\n    margin-left: 1.14667rem;\r\n    overflow:visible;\n}\n.rank-icon[data-v-343daabe]{\r\n    position: absolute;\r\n    width:0.4rem;\r\n    height:0.4rem;\r\n    left:0.8rem;\r\n    top:0.05333rem;\n}\n.empty-cell[data-v-343daabe]{\r\n    width: 10rem;\r\n    position: absolute;\r\n    top: 0px;\r\n    bottom: 1.17333rem;\r\n    left: 0px;\r\n    right: 0px;\r\n    z-index: 9999;\r\n    align-items: center;\r\n    justify-content: center;\n}\n.ui-btn-progress[data-v-343daabe]{\r\n    position: absolute;\n}\n.ui-list-info[data-v-343daabe]{\r\n    flex: 1;\r\n    padding-right: 2.24rem;\n}\n.btn-position[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\r\n    width: 1.70667rem;\r\n    height: 0.85333rem;\n}\n.ui-btn[data-v-343daabe]{\r\n    right:0;\r\n    top:0px;\n}\n.wait[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\r\n    width: 1.70667rem;\r\n    height: 0.8rem;\r\n    justify-content: center;\r\n    align-items: center;\n}\n.wait-text[data-v-343daabe]{\r\n    font-size: 0.37333rem;\r\n    color: #b2b2b2;\n}\r\n", ""]);
+exports.push([module.i, "\n.ui-list[data-v-343daabe]{\r\n    width: 10rem;\n}\n.ui-list-cell[data-v-343daabe]{\r\n    width:10rem;\n}\n.ui-list-inner[data-v-343daabe]{\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: flex;\r\n    border-bottom-width: 1px;\r\n    border-bottom-color: #E9E9E9;\r\n    border-bottom-style: solid;\r\n    margin-left: 0.4rem;\r\n    position: relative;\r\n    padding-top: 0.4rem;\r\n    padding-bottom: 0.4rem;\r\n    flex-direction: row;\r\n    height:2.4rem;\n}\n.ui-list-thumb[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\r\n    margin-right:0.26667rem;\n}\n.ui-list-img[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\n}\n.ui-thumb-img[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\n}\n.ui-list-info[data-v-343daabe]{\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: flex;\r\n    justify-content: center;\n}\n.info-h3[data-v-343daabe]{\r\n    color:#000000;\r\n    font-size: 0.42667rem;\n}\n.info-p[data-v-343daabe]{\r\n    color:#888899;\r\n    font-size: 0.32rem;\n}\n.ui-btn[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\n}\n/*btn*/\n.ui-btn[data-v-343daabe]{\r\n    width: 1.70667rem;\r\n    height: 0.8rem;\r\n    border-radius: 0.8rem;\r\n    border-width: 0.02667rem;\r\n    border-color: #888899;\r\n    justify-content: center;\r\n    color:#888899;\r\n    background:transparent;\r\n    opacity: 1;\n}\n.ui-btn[data-v-343daabe]:focus{\r\n    outline: none;\n}\n.ui-btn-text[data-v-343daabe]{\r\n    font-size: 0.32rem;\r\n    text-align: center;\n}\n.ui-btn[data-v-343daabe]:active{\r\n    opacity: .5;\n}\n.ui-btn-primary[data-v-343daabe]{\r\n    border-width: 0;\r\n    background-image: -webkit-linear-gradient(left,#FFD980,#E6BC5C);\r\n    background-image: linear-gradient(to right,#FFD980,#E6BC5C);\n}\n.ui-btn-progress[data-v-343daabe]{\r\n    position: relative;\r\n    background-image: none;\r\n    background-color: #FFD980;\r\n    overflow: hidden;\r\n    padding-left: 0.02667rem;\r\n    padding-right: 0.02667rem;\r\n    padding-top: 0.02667rem;\r\n    padding-bottom: 0.02667rem;\r\n    align-items: center;\r\n    z-index: 2;\n}\n.btn-progress-inner[data-v-343daabe]{\r\n    background-color: #fff;\r\n    position: absolute;\r\n    left: 0.02667rem;\r\n    top:0.02667rem;\r\n    right:0.02667rem;\r\n    height: 0.74667rem;\r\n    border-radius: 0.8rem;\n}\n.btn-progress-bar[data-v-343daabe]{\r\n    position: absolute;\r\n    left: 0;\r\n    top:0;\r\n    height: 0.8rem;\r\n    width: 50%;\r\n    background-image: -webkit-linear-gradient(left,#FFD980,#E6BC5C);\r\n    background-image: linear-gradient(to right,#FFD980,#E6BC5C);\r\n    //border-top-left-radius: 0.8rem;\r\n    //border-bottom-left-radius: 0.8rem;\n}\n.btn-progress-text[data-v-343daabe]{\r\n    position: relative;\r\n    z-index: 1;\r\n    color: #000;\n}\n.star-wrap[data-v-343daabe]{\r\n  flex-direction: row;\r\n  align-items: center;\n}\n.star[data-v-343daabe]{\r\n  width: 0.26667rem;\r\n  height: 0.25333rem;\r\n  margin-right: 0.04rem;\n}\n.scroe-text[data-v-343daabe]{\r\n  font-size: 0.32rem;\r\n  color: #E6B035;\r\n  margin-left: 0.13333rem;\n}\n.slider[data-v-343daabe]{\r\n    position: absolute;\r\n    top:2.50667rem;\r\n    bottom:0px;\r\n    width:10rem;\n}\n.ui-list[data-v-343daabe]{\r\n    position: absolute;\r\n    top:0px;\r\n    bottom:0px;\r\n    left:0px; \r\n    right:0px;\n}\n.list-rank[data-v-343daabe]{\r\n    width: 1.14667rem;\r\n    height: 0.50667rem;\r\n    position: absolute;\r\n    left: 0px;\r\n    top:0.93333rem;\r\n    align-items: center;\n}\n.info-h3[data-v-343daabe]{\r\n    lines:1;\r\n    text-overflow:ellipsis;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    -webkit-line-clamp: 1;\n}\n.list-rank-num[data-v-343daabe]{\r\n    width:0.8rem;\r\n    font-size:0.42667rem;\r\n    text-align: center;\n}\n.ui-list-inner[data-v-343daabe]{\r\n    //margin-left:1.41333rem;\r\n    margin-left: 1.14667rem;\r\n    overflow:visible;\n}\n.rank-icon[data-v-343daabe]{\r\n    position: absolute;\r\n    width:0.4rem;\r\n    height:0.4rem;\r\n    left:0.8rem;\r\n    top:0.05333rem;\n}\n.empty-cell[data-v-343daabe]{\r\n    width: 10rem;\r\n    position: absolute;\r\n    top: 0px;\r\n    bottom: 1.17333rem;\r\n    left: 0px;\r\n    right: 0px;\r\n    z-index: 9999;\r\n    align-items: center;\r\n    justify-content: center;\n}\n.ui-btn-progress[data-v-343daabe]{\r\n    position: absolute;\n}\n.ui-list-info[data-v-343daabe]{\r\n    flex: 1;\r\n    padding-right: 2.24rem;\n}\n.btn-position[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\r\n    width: 1.70667rem;\r\n    height: 0.85333rem;\n}\n.ui-btn[data-v-343daabe]{\r\n    right:0;\r\n    top:0px;\n}\n.wait[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\r\n    width: 1.70667rem;\r\n    height: 0.8rem;\r\n    justify-content: center;\r\n    align-items: center;\n}\n.wait-text[data-v-343daabe]{\r\n    font-size: 0.37333rem;\r\n    color: #b2b2b2;\n}\r\n", ""]);
 
 // exports
 
@@ -19728,7 +19728,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-//
 //
 //
 //
@@ -19813,7 +19812,7 @@ exports.default = {
     },
     methods: {
         sliderChanged: function sliderChanged(e) {
-            // bbc.postMessage({currentPage:e.index});
+            bbc.postMessage({ currentPage: e.index });
         },
         downloadGame: function downloadGame() {
             var self = this;
@@ -19850,7 +19849,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         return _vm.sliderChanged($event)
       }
     }
-  }, _vm._l((7), function(item, i) {
+  }, _vm._l((7), function(v, i) {
     return _c('list', {
       staticClass: "ui-list",
       attrs: {}
@@ -19928,7 +19927,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         attrs: {
           "weex-type": "div"
         }
-      }, [_vm._l((4), function(item) {
+      }, [_vm._l((4), function(s, j) {
         return _c('figure', {
           staticClass: "star weex-el weex-image",
           attrs: {
@@ -20033,7 +20032,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(16)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(18),
   /* template */
@@ -20103,7 +20102,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.ui-tab{\r\n    flex-direction:row;\r\n    height:1.17333rem;\r\n    flex-wrap: nowrap;\n}\n.ui-tab-item{\r\n    margin-left: 0.33333rem;\r\n    margin-right: 0.33333rem;\r\n    justify-content: center;\r\n    position: relative;\n}\n.tab-indicator{\r\n    content:\"\";\r\n    position: absolute;\r\n    left: 0px;\r\n    bottom:0;\r\n    right:0px;\r\n    height: 0.05333rem;\r\n    background-image: -webkit-linear-gradient(left, #E6BC5C,rgba(255, 217, 128, 0.99));\r\n    background-image: linear-gradient(to right, #E6BC5C,rgba(255, 217, 128, 0.99));\n}\n.item-text{\r\n    text-align: center;\r\n    font-size: 0.42667rem;\n}\n.item-text-active{\r\n    color: #E6B035;\n}\n.tab-btn{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\n}\n.tab-scroller{\r\n    flex-direction: row;\r\n    position: fixed;\r\n    top:0px;\r\n    width: 10rem;\r\n    height: 1.18667rem;\r\n    z-index: 2;\r\n    background-color: #fff;\n}\n.ui-tab{\r\n    //border-bottom-width: 1px;\r\n    //border-bottom-color: #E9E9E9;\r\n    //border-bottom-style: solid;\n}\n.line{\r\n    position: fixed;\r\n    top:1.17333rem;\r\n    left:0;\r\n    width: 10rem;\r\n    height: 1px;\r\n    background-color: #E9E9E9;\n}\r\n", ""]);
+exports.push([module.i, "\n.ui-tab{\r\n    flex-direction:row;\r\n    height:1.17333rem;\r\n    flex-wrap: nowrap;\n}\n.ui-tab-item{\r\n    margin-left: 0.33333rem;\r\n    margin-right: 0.33333rem;\r\n    justify-content: center;\r\n    position: relative;\n}\n.tab-indicator{\r\n    content:\"\";\r\n    position: absolute;\r\n    left: 0px;\r\n    bottom:0;\r\n    right:0px;\r\n    height: 0.05333rem;\r\n    background-image: -webkit-linear-gradient(left, #E6BC5C,rgba(255, 217, 128, 0.99));\r\n    background-image: linear-gradient(to right, #E6BC5C,rgba(255, 217, 128, 0.99));\n}\n.item-text{\r\n    text-align: center;\r\n    font-size: 0.42667rem;\n}\n.item-text-active{\r\n    color: #E6B035;\n}\n.tab-btn{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\n}\n.tab-scroller{\r\n    flex-direction: row;\r\n    position: fixed;\r\n    top:1.33333rem;\r\n    width: 10rem;\r\n    height: 1.18667rem;\r\n    z-index: 2;\r\n    background-color: #fff;\n}\n.line{\r\n    position: fixed;\r\n    top:2.50667rem;\r\n    left:0;\r\n    width: 10rem;\r\n    height: 1px;\r\n    background-color: #E9E9E9;\n}\r\n", ""]);
 
 // exports
 
@@ -20144,8 +20143,7 @@ exports.default = {
     created: function created() {
         var that = this;
         bbc.onmessage = function (event) {
-
-            // that.changeTab(event.data.currentPage);
+            that.changeTab(event.data.currentPage);
         };
     },
     methods: {
@@ -20228,7 +20226,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(21)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(23),
   /* template */
@@ -20598,7 +20596,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(26)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(28),
   /* template */
@@ -21014,7 +21012,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(31)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(33),
   /* template */
@@ -21199,7 +21197,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(36)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(38),
   /* template */
@@ -21566,7 +21564,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(41)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(43),
   /* template */
@@ -21741,7 +21739,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(46)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(48),
   /* template */
@@ -21811,7 +21809,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.wrapper-inner[data-v-18c05660]{\n  position: absolute;\n  top:0;\n  bottom:0;\n  width: 10rem;\n  background-color:#fff;\n}\n", ""]);
 
 // exports
 
@@ -21848,13 +21846,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   name: 'App',
   components: {
-    Slider: _slider2.default, Tab: _tab2.default
+    SliderList: _slider2.default, Tab: _tab2.default
   },
   data: function data() {
-    return {};
+    return {
+      imageList: []
+    };
   },
-
-  created: function created() {}
+  created: function created() {
+    this.imageList = [{ src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg' }];
+  }
 };
 
 /***/ }),
@@ -21863,11 +21864,11 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "wrapper weex-ct weex-div",
+    staticClass: "wrapper-inner weex-ct weex-div",
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('Slider'), _vm._v(" "), _c('Tab')], 1)
+  }, [_c('Tab'), _vm._v(" "), _c('SliderList')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -21886,7 +21887,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(51)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(53),
   /* template */
@@ -22048,7 +22049,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(56)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(58),
   /* template */
@@ -22282,7 +22283,7 @@ function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(61)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   __webpack_require__(63),
   /* template */
@@ -24210,7 +24211,7 @@ if (false) {
 /* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
   null,
   /* template */
@@ -24231,7 +24232,13 @@ module.exports = Component.exports
 /***/ }),
 /* 67 */,
 /* 68 */,
-/* 69 */
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24249,23 +24256,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _weexVueRender2.default.init(_vue2.default);
 
-var App = __webpack_require__(70);
+var App = __webpack_require__(76);
 new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ }),
-/* 70 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(71)
+  __webpack_require__(77)
 }
-var Component = __webpack_require__(1)(
+var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(73),
+  __webpack_require__(79),
   /* template */
-  __webpack_require__(74),
+  __webpack_require__(80),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -24297,13 +24304,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 71 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(72);
+var content = __webpack_require__(78);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -24323,7 +24330,7 @@ if(false) {
 }
 
 /***/ }),
-/* 72 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -24331,13 +24338,13 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.wrapper[data-v-6480ce52]{\n  padding-bottom: 0.66667rem;\n}\n.header-bar[data-v-6480ce52]{\n  top:-0.53333rem;\n  left: 0;\n  padding-top: 0.4rem; \n  height: 1.86667rem;\n  background-color:#ff9300;\n  position: fixed;\n  z-index: 9999;\n}\n.header-bar-placeholder[data-v-6480ce52]{\n  height: 1.86667rem;\n}\n.back-btn[data-v-6480ce52]{\n  position: absolute;\n  left:0;\n  top:0.4rem;\n  height: 1.46667rem;\n  width: 2.8rem;\n  padding-left: 0.26667rem;\n}\n.back-btn-txt[data-v-6480ce52]{\n  height: 1.46667rem;\n  line-height: 1.46667rem;\n  color:#ffffff;\n  font-size: 0.53333rem;\n}\n.title[data-v-6480ce52]{\n  width: 10rem;\n  height: 1.46667rem;\n  line-height:1.46667rem;\n  color:#ffffff;\n  font-size: 0.53333rem;\n  text-align: center;\n}\n.h1[data-v-6480ce52]{\n  font-size: 0.64rem;\n  padding-left: 0.32rem;\n  height: 2.4rem;\n  font-weight: bold;\n  text-align: center;\n  line-height: 2.4rem;\n  background-color: #ffffff;\n  border-bottom-width: 1px;\n  border-bottom-style: solid; \n  border-bottom-color: #aaaaaa;\n}\n.link-list[data-v-6480ce52]{\n  padding-left: 0.66667rem; \n  border-bottom-width: 1px;\n  border-bottom-style: solid; \n  border-bottom-color: #aaaaaa;\n}\n.link[data-v-6480ce52]{\n  font-size: 0.64rem;\n  height: 1.6rem;\n  line-height: 1.6rem;\n  border-bottom-width: 1px;\n  border-bottom-style: solid; \n  border-bottom-color: #aaaaaa;\n  position: relative;\n}\n.last[data-v-6480ce52]{\n  border-bottom-width: 0px;\n}\n.icon-arrow[data-v-6480ce52]{\n  color:#aaa;\n  position: absolute;\n  right: 0.4rem;\n  top:0.53333rem;\n  font-family: iconfont;\n}\n.grid-3[data-v-6480ce52]{ \n  /*flex-direction:row;*/\n  margin-left: -0.05333rem;\n  background-color: red;\n}\n.grid-item[data-v-6480ce52]{\n  background-color: red;\n  margin-left: 0.05333rem;\n  width: 3.29333rem;\n  height: 3.29333rem;\n  position: relative;\n}\n.grid-image[data-v-6480ce52]{\n  position: absolute;\n  width: 3.29333rem;\n  height: 3.29333rem;\n  top:0;\n  left: 0;\n}\n.image[data-v-6480ce52] {\n  width: 9.33333rem;\n  height: 9.33333rem;\n}\n.slider[data-v-6480ce52] {\n  margin-top: 0.33333rem;\n  margin-left: 0.33333rem;\n  width: 9.33333rem;\n  height: 9.33333rem;\n  border-width: 0.02667rem;\n  border-style: solid;\n  border-color: #41B883;\n}\n.frame[data-v-6480ce52] {\n  width: 9.33333rem;\n  height: 9.33333rem;\n  position: relative;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper[data-v-6480ce52]{\n  position: absolute;\n  top:0;\n  bottom:0;\n  width: 10rem;\n  padding-bottom: 0.66667rem;\n}\n.header-bar[data-v-6480ce52]{\n  top:-0.53333rem;\n  left: 0;\n  padding-top: 0.4rem; \n  height: 1.86667rem;\n  background-color:#ff9300;\n  position: fixed;\n  z-index: 9999;\n}\n.header-bar-placeholder[data-v-6480ce52]{\n  height: 1.86667rem;\n}\n.back-btn[data-v-6480ce52]{\n  position: absolute;\n  left:0;\n  top:0.4rem;\n  height: 1.46667rem;\n  width: 2.8rem;\n  padding-left: 0.26667rem;\n}\n.back-btn-txt[data-v-6480ce52]{\n  height: 1.46667rem;\n  line-height: 1.46667rem;\n  color:#ffffff;\n  font-size: 0.53333rem;\n}\n.title[data-v-6480ce52]{\n  width: 10rem;\n  height: 1.46667rem;\n  line-height:1.46667rem;\n  color:#ffffff;\n  font-size: 0.53333rem;\n  text-align: center;\n}\n.h1[data-v-6480ce52]{\n  font-size: 0.64rem;\n  padding-left: 0.32rem;\n  height: 2.4rem;\n  font-weight: bold;\n  text-align: center;\n  line-height: 2.4rem;\n  background-color: #ffffff;\n  border-bottom-width: 1px;\n  border-bottom-style: solid; \n  border-bottom-color: #aaaaaa;\n}\n.link-list[data-v-6480ce52]{\n  padding-left: 0.66667rem; \n  border-bottom-width: 1px;\n  border-bottom-style: solid; \n  border-bottom-color: #aaaaaa;\n}\n.link[data-v-6480ce52]{\n  font-size: 0.64rem;\n  height: 1.6rem;\n  line-height: 1.6rem;\n  border-bottom-width: 1px;\n  border-bottom-style: solid; \n  border-bottom-color: #aaaaaa;\n  position: relative;\n}\n.last[data-v-6480ce52]{\n  border-bottom-width: 0px;\n}\n.icon-arrow[data-v-6480ce52]{\n  color:#aaa;\n  position: absolute;\n  right: 0.4rem;\n  top:0.53333rem;\n  font-family: iconfont;\n}\n.grid-3[data-v-6480ce52]{ \n  /*flex-direction:row;*/\n  margin-left: -0.05333rem;\n  background-color: red;\n}\n.grid-item[data-v-6480ce52]{\n  background-color: red;\n  margin-left: 0.05333rem;\n  width: 3.29333rem;\n  height: 3.29333rem;\n  position: relative;\n}\n.grid-image[data-v-6480ce52]{\n  position: absolute;\n  width: 3.29333rem;\n  height: 3.29333rem;\n  top:0;\n  left: 0;\n}\n.image[data-v-6480ce52] {\n  width: 9.33333rem;\n  height: 9.33333rem;\n}\n.slider[data-v-6480ce52] {\n  margin-top: 0.33333rem;\n  margin-left: 0.33333rem;\n  width: 9.33333rem;\n  height: 9.33333rem;\n  border-width: 0.02667rem;\n  border-style: solid;\n  border-color: #41B883;\n}\n.frame[data-v-6480ce52] {\n  width: 9.33333rem;\n  height: 9.33333rem;\n  position: relative;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 73 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24456,10 +24463,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
-//
-//
 
 var navigator = weex.requireModule('navigator');
 exports.default = {
@@ -24489,7 +24492,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 74 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

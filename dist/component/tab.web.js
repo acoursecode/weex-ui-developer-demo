@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 68);
+/******/ 	return __webpack_require__(__webpack_require__.s = 74);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -96,304 +96,6 @@ module.exports = g;
 /***/ }),
 
 /***/ 1:
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-
-/***/ 15:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(16)
-}
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(18),
-  /* template */
-  __webpack_require__(19),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/tab.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] tab.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-017f33f0", Component.options)
-  } else {
-    hotAPI.reload("data-v-017f33f0", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(17);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("05f44097", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-017f33f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./tab.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-017f33f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./tab.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 17:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.ui-tab{\r\n    flex-direction:row;\r\n    height:1.17333rem;\r\n    flex-wrap: nowrap;\n}\n.ui-tab-item{\r\n    margin-left: 0.33333rem;\r\n    margin-right: 0.33333rem;\r\n    justify-content: center;\r\n    position: relative;\n}\n.tab-indicator{\r\n    content:\"\";\r\n    position: absolute;\r\n    left: 0px;\r\n    bottom:0;\r\n    right:0px;\r\n    height: 0.05333rem;\r\n    background-image: -webkit-linear-gradient(left, #E6BC5C,rgba(255, 217, 128, 0.99));\r\n    background-image: linear-gradient(to right, #E6BC5C,rgba(255, 217, 128, 0.99));\n}\n.item-text{\r\n    text-align: center;\r\n    font-size: 0.42667rem;\n}\n.item-text-active{\r\n    color: #E6B035;\n}\n.tab-btn{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\n}\n.tab-scroller{\r\n    flex-direction: row;\r\n    position: fixed;\r\n    top:0px;\r\n    width: 10rem;\r\n    height: 1.18667rem;\r\n    z-index: 2;\r\n    background-color: #fff;\n}\n.ui-tab{\r\n    //border-bottom-width: 1px;\r\n    //border-bottom-color: #E9E9E9;\r\n    //border-bottom-style: solid;\n}\n.line{\r\n    position: fixed;\r\n    top:1.17333rem;\r\n    left:0;\r\n    width: 10rem;\r\n    height: 1px;\r\n    background-color: #E9E9E9;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 18:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var bbc = new BroadcastChannel('game-list');
-exports.default = {
-    data: function data() {
-        return {
-            list: ['热门', '角色', '射击', '卡牌', '策略', '动作', '竞技'],
-            tabIndex: 0
-        };
-    },
-
-    created: function created() {
-        var that = this;
-        bbc.onmessage = function (event) {
-
-            // that.changeTab(event.data.currentPage);
-        };
-    },
-    methods: {
-        changeTab: function changeTab(index) {
-            this.tabIndex = index;
-        }
-    }
-};
-
-/***/ }),
-
-/***/ 19:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: " weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('scroller', {
-    staticClass: "tab-scroller",
-    attrs: {
-      "scroll-direction": "horizontal",
-      "show-scrollbar": "false"
-    }
-  }, [_c('div', {
-    staticClass: "line weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }), _vm._v(" "), _c('div', {
-    staticClass: "ui-tab weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, _vm._l((_vm.list), function(item, index) {
-    return _c('div', {
-      ref: 'tabItem' + index,
-      refInFor: true,
-      staticClass: "ui-tab-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "item-text weex-el weex-text",
-      class: _vm.tabIndex == index ? ['item-text-active'] : [''],
-      attrs: {
-        "weex-type": "text",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.changeTab(index)
-        }
-      }
-    }, [_vm._v(_vm._s(item))]), _vm._v(" "), (_vm.tabIndex == index) ? _c('div', {
-      staticClass: "tab-indicator weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }) : _vm._e()])
-  }))])], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-017f33f0", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 2:
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -580,6 +282,303 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
+
+
+/***/ }),
+
+/***/ 15:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(16)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(18),
+  /* template */
+  __webpack_require__(19),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/tab.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] tab.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-017f33f0", Component.options)
+  } else {
+    hotAPI.reload("data-v-017f33f0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 16:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(17);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("05f44097", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-017f33f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./tab.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-017f33f0\",\"scoped\":false,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./tab.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 17:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.ui-tab{\r\n    flex-direction:row;\r\n    height:1.17333rem;\r\n    flex-wrap: nowrap;\n}\n.ui-tab-item{\r\n    margin-left: 0.33333rem;\r\n    margin-right: 0.33333rem;\r\n    justify-content: center;\r\n    position: relative;\n}\n.tab-indicator{\r\n    content:\"\";\r\n    position: absolute;\r\n    left: 0px;\r\n    bottom:0;\r\n    right:0px;\r\n    height: 0.05333rem;\r\n    background-image: -webkit-linear-gradient(left, #E6BC5C,rgba(255, 217, 128, 0.99));\r\n    background-image: linear-gradient(to right, #E6BC5C,rgba(255, 217, 128, 0.99));\n}\n.item-text{\r\n    text-align: center;\r\n    font-size: 0.42667rem;\n}\n.item-text-active{\r\n    color: #E6B035;\n}\n.tab-btn{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\n}\n.tab-scroller{\r\n    flex-direction: row;\r\n    position: fixed;\r\n    top:1.33333rem;\r\n    width: 10rem;\r\n    height: 1.18667rem;\r\n    z-index: 2;\r\n    background-color: #fff;\n}\n.line{\r\n    position: fixed;\r\n    top:2.50667rem;\r\n    left:0;\r\n    width: 10rem;\r\n    height: 1px;\r\n    background-color: #E9E9E9;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 18:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var bbc = new BroadcastChannel('game-list');
+exports.default = {
+    data: function data() {
+        return {
+            list: ['热门', '角色', '射击', '卡牌', '策略', '动作', '竞技'],
+            tabIndex: 0
+        };
+    },
+
+    created: function created() {
+        var that = this;
+        bbc.onmessage = function (event) {
+            that.changeTab(event.data.currentPage);
+        };
+    },
+    methods: {
+        changeTab: function changeTab(index) {
+            this.tabIndex = index;
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 19:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('scroller', {
+    staticClass: "tab-scroller",
+    attrs: {
+      "scroll-direction": "horizontal",
+      "show-scrollbar": "false"
+    }
+  }, [_c('div', {
+    staticClass: "line weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "ui-tab weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, _vm._l((_vm.list), function(item, index) {
+    return _c('div', {
+      ref: 'tabItem' + index,
+      refInFor: true,
+      staticClass: "ui-tab-item weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "item-text weex-el weex-text",
+      class: _vm.tabIndex == index ? ['item-text-active'] : [''],
+      attrs: {
+        "weex-type": "text",
+        "data-evt-click": ""
+      },
+      on: {
+        "click": _vm.$stopOuterA,
+        "weex$tap": function($event) {
+          $event.stopPropagation();
+          _vm.changeTab(index)
+        }
+      }
+    }, [_vm._v(_vm._s(item))]), _vm._v(" "), (_vm.tabIndex == index) ? _c('div', {
+      staticClass: "tab-indicator weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }) : _vm._e()])
+  }))])], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-017f33f0", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
 
 
 /***/ }),
@@ -8934,7 +8933,7 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(0), __webpack_require__(6).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(0), __webpack_require__(6).setImmediate))
 
 /***/ }),
 
@@ -9006,29 +9005,6 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (this && this.clearImmediate);
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-
-/***/ 68:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _vue = __webpack_require__(5);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _weexVueRender = __webpack_require__(8);
-
-var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_weexVueRender2.default.init(_vue2.default);
-
-var App = __webpack_require__(15);
-new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ }),
 
@@ -9222,7 +9198,30 @@ new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
+
+/***/ }),
+
+/***/ 74:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vue = __webpack_require__(5);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _weexVueRender = __webpack_require__(8);
+
+var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_weexVueRender2.default.init(_vue2.default);
+
+var App = __webpack_require__(15);
+new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ }),
 

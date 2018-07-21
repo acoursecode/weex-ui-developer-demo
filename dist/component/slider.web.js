@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 67);
+/******/ 	return __webpack_require__(__webpack_require__.s = 73);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -96,502 +96,6 @@ module.exports = g;
 /***/ }),
 
 /***/ 1:
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-
-/***/ 10:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(11)
-}
-var Component = __webpack_require__(1)(
-  /* script */
-  __webpack_require__(13),
-  /* template */
-  __webpack_require__(14),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-343daabe",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/slider.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] slider.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-343daabe", Component.options)
-  } else {
-    hotAPI.reload("data-v-343daabe", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 11:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(12);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("480219eb", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-343daabe\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./slider.vue", function() {
-     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-343daabe\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./slider.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 12:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.ui-list[data-v-343daabe]{\r\n    width: 10rem;\n}\n.ui-list-cell[data-v-343daabe]{\r\n    width:10rem;\n}\n.ui-list-inner[data-v-343daabe]{\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: flex;\r\n    border-bottom-width: 1px;\r\n    border-bottom-color: #E9E9E9;\r\n    border-bottom-style: solid;\r\n    margin-left: 0.4rem;\r\n    position: relative;\r\n    padding-top: 0.4rem;\r\n    padding-bottom: 0.4rem;\r\n    flex-direction: row;\r\n    height:2.4rem;\n}\n.ui-list-thumb[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\r\n    margin-right:0.26667rem;\n}\n.ui-list-img[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\n}\n.ui-thumb-img[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\n}\n.ui-list-info[data-v-343daabe]{\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: flex;\r\n    justify-content: center;\n}\n.info-h3[data-v-343daabe]{\r\n    color:#000000;\r\n    font-size: 0.42667rem;\n}\n.info-p[data-v-343daabe]{\r\n    color:#888899;\r\n    font-size: 0.32rem;\n}\n.ui-btn[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\n}\n/*btn*/\n.ui-btn[data-v-343daabe]{\r\n    width: 1.70667rem;\r\n    height: 0.8rem;\r\n    border-radius: 0.8rem;\r\n    border-width: 0.02667rem;\r\n    border-color: #888899;\r\n    justify-content: center;\r\n    color:#888899;\r\n    background:transparent;\r\n    opacity: 1;\n}\n.ui-btn[data-v-343daabe]:focus{\r\n    outline: none;\n}\n.ui-btn-text[data-v-343daabe]{\r\n    font-size: 0.32rem;\r\n    text-align: center;\n}\n.ui-btn[data-v-343daabe]:active{\r\n    opacity: .5;\n}\n.ui-btn-primary[data-v-343daabe]{\r\n    border-width: 0;\r\n    background-image: -webkit-linear-gradient(left,#FFD980,#E6BC5C);\r\n    background-image: linear-gradient(to right,#FFD980,#E6BC5C);\n}\n.ui-btn-progress[data-v-343daabe]{\r\n    position: relative;\r\n    background-image: none;\r\n    background-color: #FFD980;\r\n    overflow: hidden;\r\n    padding-left: 0.02667rem;\r\n    padding-right: 0.02667rem;\r\n    padding-top: 0.02667rem;\r\n    padding-bottom: 0.02667rem;\r\n    align-items: center;\r\n    z-index: 2;\n}\n.btn-progress-inner[data-v-343daabe]{\r\n    background-color: #fff;\r\n    position: absolute;\r\n    left: 0.02667rem;\r\n    top:0.02667rem;\r\n    right:0.02667rem;\r\n    height: 0.74667rem;\r\n    border-radius: 0.8rem;\n}\n.btn-progress-bar[data-v-343daabe]{\r\n    position: absolute;\r\n    left: 0;\r\n    top:0;\r\n    height: 0.8rem;\r\n    width: 50%;\r\n    background-image: -webkit-linear-gradient(left,#FFD980,#E6BC5C);\r\n    background-image: linear-gradient(to right,#FFD980,#E6BC5C);\r\n    //border-top-left-radius: 0.8rem;\r\n    //border-bottom-left-radius: 0.8rem;\n}\n.btn-progress-text[data-v-343daabe]{\r\n    position: relative;\r\n    z-index: 1;\r\n    color: #000;\n}\n.star-wrap[data-v-343daabe]{\r\n  flex-direction: row;\r\n  align-items: center;\n}\n.star[data-v-343daabe]{\r\n  width: 0.26667rem;\r\n  height: 0.25333rem;\r\n  margin-right: 0.04rem;\n}\n.scroe-text[data-v-343daabe]{\r\n  font-size: 0.32rem;\r\n  color: #E6B035;\r\n  margin-left: 0.13333rem;\n}\n.slider[data-v-343daabe]{\r\n    position: absolute;\r\n    top:1.17333rem;\r\n    bottom:0px;\r\n    width:10rem;\n}\n.ui-list[data-v-343daabe]{\r\n    position:absolute;\r\n    top:0px;\r\n    bottom:0px;\r\n    left:0px;\r\n    right:0px;\n}\n.list-rank[data-v-343daabe]{\r\n    width: 1.14667rem;\r\n    height: 0.50667rem;\r\n    position: absolute;\r\n    left: 0px;\r\n    top:0.93333rem;\r\n    align-items: center;\n}\n.info-h3[data-v-343daabe]{\r\n    lines:1;\r\n    text-overflow:ellipsis;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    -webkit-line-clamp: 1;\n}\n.list-rank-num[data-v-343daabe]{\r\n    width:0.8rem;\r\n    font-size:0.42667rem;\r\n    text-align: center;\n}\n.ui-list-inner[data-v-343daabe]{\r\n    //margin-left:1.41333rem;\r\n    margin-left: 1.14667rem;\r\n    overflow:visible;\n}\n.rank-icon[data-v-343daabe]{\r\n    position: absolute;\r\n    width:0.4rem;\r\n    height:0.4rem;\r\n    left:0.8rem;\r\n    top:0.05333rem;\n}\n.empty-cell[data-v-343daabe]{\r\n    width: 10rem;\r\n    position: absolute;\r\n    top: 0px;\r\n    bottom: 1.17333rem;\r\n    left: 0px;\r\n    right: 0px;\r\n    z-index: 9999;\r\n    align-items: center;\r\n    justify-content: center;\n}\n.ui-btn-progress[data-v-343daabe]{\r\n    position: absolute;\n}\n.ui-list-info[data-v-343daabe]{\r\n    flex: 1;\r\n    padding-right: 2.24rem;\n}\n.btn-position[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\r\n    width: 1.70667rem;\r\n    height: 0.85333rem;\n}\n.ui-btn[data-v-343daabe]{\r\n    right:0;\r\n    top:0px;\n}\n.wait[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\r\n    width: 1.70667rem;\r\n    height: 0.8rem;\r\n    justify-content: center;\r\n    align-items: center;\n}\n.wait-text[data-v-343daabe]{\r\n    font-size: 0.37333rem;\r\n    color: #b2b2b2;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 13:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var platform = weex.config.env.platform;
-
-var isWeb = (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && platform.toLowerCase() === 'web';
-var bbc = new BroadcastChannel('game-list');
-exports.default = {
-    components: {},
-    data: function data() {
-        return {
-            avatarUrl: 'http://placeholder.qiniudn.com/100x100',
-            photoUrl: 'http://placeholder.qiniudn.com/750x422',
-            linkImg: {
-                up: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/up.png',
-                down: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/down.png',
-                hold: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/hold.png',
-                stared: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/stared.png',
-                star: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/star.png',
-                placeholderImg: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/game.png'
-            },
-            isDownload: false,
-            btnProgress: 0,
-            btnProgressText: this.isDownload ? '0%' : '下载'
-        };
-    },
-
-
-    computed: {
-        downloadBtnClass: function downloadBtnClass() {
-            return this.isDownload ? ['ui-btn', 'ui-btn-primary', 'ui-btn-progress'] : ['ui-btn'];
-        },
-        downloadBtnTextClass: function downloadBtnTextClass() {
-            return this.isDownload ? ['ui-btn-text', 'btn-progress-text'] : ['ui-btn-text'];
-        },
-        positionStyle: function positionStyle() {
-            return weex.config.env.platform == 'android' ? 'absolute' : 'fixed';
-        }
-    },
-    methods: {
-        sliderChanged: function sliderChanged(e) {
-            // bbc.postMessage({currentPage:e.index});
-        },
-        downloadGame: function downloadGame() {
-            var self = this;
-            var btnWidth = isWeb ? 68 : 136;
-            self.isDownload = true;
-            self.btnProgressText = self.isDownload ? '0%' : '下载';
-            var run = setInterval(function () {
-                self.btnProgress += 4;
-                self.btnProgressText = parseInt(self.btnProgress / btnWidth * 100) + '%';
-                if (self.btnProgress == btnWidth) {
-                    self.btnProgress = 0;
-                    self.isDownload = false;
-                    self.btnProgressText = '下载';
-                    clearInterval(run);
-                }
-            }, 50);
-        }
-    }
-};
-
-/***/ }),
-
-/***/ 14:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('slider', {
-    staticClass: "slider",
-    attrs: {
-      "data-evt-change": ""
-    },
-    nativeOn: {
-      "change": function($event) {
-        $event.stopPropagation();
-        return _vm.sliderChanged($event)
-      }
-    }
-  }, _vm._l((7), function(item, i) {
-    return _c('list', {
-      staticClass: "ui-list",
-      attrs: {}
-    }, _vm._l((16), function(item, index) {
-      return _c('section', {
-        staticClass: "ui-list-cell weex-ct weex-cell",
-        attrs: {
-          "weex-type": "cell"
-        }
-      }, [_c('div', {
-        staticClass: "list-rank weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [_c('p', {
-        staticClass: "list-rank-num weex-el weex-text",
-        attrs: {
-          "weex-type": "text"
-        }
-      }, [_vm._v(_vm._s(1 + index))]), _vm._v(" "), (false) ? _c('div', {
-        staticClass: " weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [(index == 0) ? _c('figure', {
-        staticClass: "rank-icon rank-up weex-el weex-image",
-        attrs: {
-          "src": _vm.linkImg.up,
-          "data-img-src": _vm.linkImg.up,
-          "weex-type": "image"
-        }
-      }) : _vm._e(), _vm._v(" "), (index == 1) ? _c('figure', {
-        staticClass: "rank-icon rank-down weex-el weex-image",
-        attrs: {
-          "src": _vm.linkImg.down,
-          "data-img-src": _vm.linkImg.down,
-          "weex-type": "image"
-        }
-      }) : _vm._e(), _vm._v(" "), (index > 1) ? _c('figure', {
-        staticClass: "rank-icon rank-hold weex-el weex-image",
-        attrs: {
-          "src": _vm.linkImg.hold,
-          "data-img-src": _vm.linkImg.hold,
-          "weex-type": "image"
-        }
-      }) : _vm._e()]) : _vm._e()]), _vm._v(" "), _c('div', {
-        staticClass: "ui-list-inner weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [_c('div', {
-        staticClass: "ui-list-thumb weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [_c('figure', {
-        staticClass: "ui-list-img weex-el weex-image",
-        attrs: {
-          "src": _vm.linkImg.placeholderImg,
-          "data-img-src": _vm.linkImg.placeholderImg,
-          "weex-type": "image"
-        }
-      })]), _vm._v(" "), _c('div', {
-        staticClass: "ui-list-info weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [_c('p', {
-        staticClass: "info-h3 weex-el weex-text",
-        attrs: {
-          "weex-type": "text"
-        }
-      }, [_vm._v("全民飞机全民飞机全民飞机全民飞机全民飞机")]), _vm._v(" "), _c('div', {
-        staticClass: "star-wrap weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [_vm._l((4), function(item) {
-        return _c('figure', {
-          staticClass: "star weex-el weex-image",
-          attrs: {
-            "src": _vm.linkImg.stared,
-            "data-img-src": _vm.linkImg.stared,
-            "weex-type": "image"
-          }
-        })
-      }), _vm._v(" "), _c('figure', {
-        staticClass: "star weex-el weex-image",
-        attrs: {
-          "src": _vm.linkImg.star,
-          "data-img-src": _vm.linkImg.star,
-          "weex-type": "image"
-        }
-      }), _vm._v(" "), _c('p', {
-        staticClass: "scroe-text weex-el weex-text",
-        attrs: {
-          "weex-type": "text"
-        }
-      }, [_vm._v("9.2分")])], 2), _vm._v(" "), _c('p', {
-        staticClass: "info-p weex-el weex-text",
-        attrs: {
-          "weex-type": "text"
-        }
-      }, [_vm._v("293881人已安装")])]), _vm._v(" "), (index == 3) ? _c('div', {
-        staticClass: "wait weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [_c('p', {
-        staticClass: "wait-text weex-el weex-text",
-        attrs: {
-          "weex-type": "text"
-        }
-      }, [_vm._v("敬请期待")])]) : _c('div', {
-        staticClass: "btn-position weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [(index != 2) ? _c('div', {
-        staticClass: "ui-btn weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }, [_c('p', {
-        staticClass: "ui-btn-text weex-el weex-text",
-        attrs: {
-          "weex-type": "text"
-        }
-      }, [_vm._v("下载")])]) : _vm._e(), _vm._v(" "), (index === 2) ? _c('div', {
-        staticClass: " weex-ct weex-div",
-        class: _vm.downloadBtnClass,
-        attrs: {
-          "weex-type": "div",
-          "data-evt-click": ""
-        },
-        on: {
-          "click": _vm.$stopOuterA,
-          "weex$tap": function($event) {
-            $event.stopPropagation();
-            return _vm.downloadGame($event)
-          }
-        }
-      }, [(_vm.isDownload) ? _c('div', {
-        staticClass: "btn-progress-inner weex-ct weex-div",
-        attrs: {
-          "weex-type": "div"
-        }
-      }) : _vm._e(), _vm._v(" "), (_vm.isDownload) ? _c('div', {
-        staticClass: "btn-progress-bar weex-ct weex-div",
-        style: ({
-          width: _vm._px2rem(_vm.btnProgress + 'px', 75)
-        }),
-        attrs: {
-          "weex-type": "div"
-        }
-      }) : _vm._e(), _vm._v(" "), _c('p', {
-        staticClass: " weex-el weex-text",
-        class: _vm.downloadBtnTextClass,
-        attrs: {
-          "weex-type": "text"
-        }
-      }, [_vm._v(_vm._s(_vm.btnProgressText))])]) : _vm._e()])])])
-    }))
-  }))
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-343daabe", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 2:
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -778,6 +282,501 @@ process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
+
+
+/***/ }),
+
+/***/ 10:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(11)
+}
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(13),
+  /* template */
+  __webpack_require__(14),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-343daabe",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/slider.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] slider.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-343daabe", Component.options)
+  } else {
+    hotAPI.reload("data-v-343daabe", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 11:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(12);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("480219eb", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-343daabe\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./slider.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-343daabe\",\"scoped\":true,\"hasInlineConfig\":true}!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./slider.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 12:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.ui-list[data-v-343daabe]{\r\n    width: 10rem;\n}\n.ui-list-cell[data-v-343daabe]{\r\n    width:10rem;\n}\n.ui-list-inner[data-v-343daabe]{\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: flex;\r\n    border-bottom-width: 1px;\r\n    border-bottom-color: #E9E9E9;\r\n    border-bottom-style: solid;\r\n    margin-left: 0.4rem;\r\n    position: relative;\r\n    padding-top: 0.4rem;\r\n    padding-bottom: 0.4rem;\r\n    flex-direction: row;\r\n    height:2.4rem;\n}\n.ui-list-thumb[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\r\n    margin-right:0.26667rem;\n}\n.ui-list-img[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\n}\n.ui-thumb-img[data-v-343daabe]{\r\n    width: 1.6rem;\r\n    height: 1.6rem;\n}\n.ui-list-info[data-v-343daabe]{\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: flex;\r\n    justify-content: center;\n}\n.info-h3[data-v-343daabe]{\r\n    color:#000000;\r\n    font-size: 0.42667rem;\n}\n.info-p[data-v-343daabe]{\r\n    color:#888899;\r\n    font-size: 0.32rem;\n}\n.ui-btn[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\n}\n/*btn*/\n.ui-btn[data-v-343daabe]{\r\n    width: 1.70667rem;\r\n    height: 0.8rem;\r\n    border-radius: 0.8rem;\r\n    border-width: 0.02667rem;\r\n    border-color: #888899;\r\n    justify-content: center;\r\n    color:#888899;\r\n    background:transparent;\r\n    opacity: 1;\n}\n.ui-btn[data-v-343daabe]:focus{\r\n    outline: none;\n}\n.ui-btn-text[data-v-343daabe]{\r\n    font-size: 0.32rem;\r\n    text-align: center;\n}\n.ui-btn[data-v-343daabe]:active{\r\n    opacity: .5;\n}\n.ui-btn-primary[data-v-343daabe]{\r\n    border-width: 0;\r\n    background-image: -webkit-linear-gradient(left,#FFD980,#E6BC5C);\r\n    background-image: linear-gradient(to right,#FFD980,#E6BC5C);\n}\n.ui-btn-progress[data-v-343daabe]{\r\n    position: relative;\r\n    background-image: none;\r\n    background-color: #FFD980;\r\n    overflow: hidden;\r\n    padding-left: 0.02667rem;\r\n    padding-right: 0.02667rem;\r\n    padding-top: 0.02667rem;\r\n    padding-bottom: 0.02667rem;\r\n    align-items: center;\r\n    z-index: 2;\n}\n.btn-progress-inner[data-v-343daabe]{\r\n    background-color: #fff;\r\n    position: absolute;\r\n    left: 0.02667rem;\r\n    top:0.02667rem;\r\n    right:0.02667rem;\r\n    height: 0.74667rem;\r\n    border-radius: 0.8rem;\n}\n.btn-progress-bar[data-v-343daabe]{\r\n    position: absolute;\r\n    left: 0;\r\n    top:0;\r\n    height: 0.8rem;\r\n    width: 50%;\r\n    background-image: -webkit-linear-gradient(left,#FFD980,#E6BC5C);\r\n    background-image: linear-gradient(to right,#FFD980,#E6BC5C);\r\n    //border-top-left-radius: 0.8rem;\r\n    //border-bottom-left-radius: 0.8rem;\n}\n.btn-progress-text[data-v-343daabe]{\r\n    position: relative;\r\n    z-index: 1;\r\n    color: #000;\n}\n.star-wrap[data-v-343daabe]{\r\n  flex-direction: row;\r\n  align-items: center;\n}\n.star[data-v-343daabe]{\r\n  width: 0.26667rem;\r\n  height: 0.25333rem;\r\n  margin-right: 0.04rem;\n}\n.scroe-text[data-v-343daabe]{\r\n  font-size: 0.32rem;\r\n  color: #E6B035;\r\n  margin-left: 0.13333rem;\n}\n.slider[data-v-343daabe]{\r\n    position: absolute;\r\n    top:2.50667rem;\r\n    bottom:0px;\r\n    width:10rem;\n}\n.ui-list[data-v-343daabe]{\r\n    position: absolute;\r\n    top:0px;\r\n    bottom:0px;\r\n    left:0px; \r\n    right:0px;\n}\n.list-rank[data-v-343daabe]{\r\n    width: 1.14667rem;\r\n    height: 0.50667rem;\r\n    position: absolute;\r\n    left: 0px;\r\n    top:0.93333rem;\r\n    align-items: center;\n}\n.info-h3[data-v-343daabe]{\r\n    lines:1;\r\n    text-overflow:ellipsis;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    -webkit-line-clamp: 1;\n}\n.list-rank-num[data-v-343daabe]{\r\n    width:0.8rem;\r\n    font-size:0.42667rem;\r\n    text-align: center;\n}\n.ui-list-inner[data-v-343daabe]{\r\n    //margin-left:1.41333rem;\r\n    margin-left: 1.14667rem;\r\n    overflow:visible;\n}\n.rank-icon[data-v-343daabe]{\r\n    position: absolute;\r\n    width:0.4rem;\r\n    height:0.4rem;\r\n    left:0.8rem;\r\n    top:0.05333rem;\n}\n.empty-cell[data-v-343daabe]{\r\n    width: 10rem;\r\n    position: absolute;\r\n    top: 0px;\r\n    bottom: 1.17333rem;\r\n    left: 0px;\r\n    right: 0px;\r\n    z-index: 9999;\r\n    align-items: center;\r\n    justify-content: center;\n}\n.ui-btn-progress[data-v-343daabe]{\r\n    position: absolute;\n}\n.ui-list-info[data-v-343daabe]{\r\n    flex: 1;\r\n    padding-right: 2.24rem;\n}\n.btn-position[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\r\n    width: 1.70667rem;\r\n    height: 0.85333rem;\n}\n.ui-btn[data-v-343daabe]{\r\n    right:0;\r\n    top:0px;\n}\n.wait[data-v-343daabe]{\r\n    position: absolute;\r\n    right:0.4rem;\r\n    top:0.8rem;\r\n    width: 1.70667rem;\r\n    height: 0.8rem;\r\n    justify-content: center;\r\n    align-items: center;\n}\n.wait-text[data-v-343daabe]{\r\n    font-size: 0.37333rem;\r\n    color: #b2b2b2;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var platform = weex.config.env.platform;
+
+var isWeb = (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && platform.toLowerCase() === 'web';
+var bbc = new BroadcastChannel('game-list');
+exports.default = {
+    components: {},
+    data: function data() {
+        return {
+            avatarUrl: 'http://placeholder.qiniudn.com/100x100',
+            photoUrl: 'http://placeholder.qiniudn.com/750x422',
+            linkImg: {
+                up: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/up.png',
+                down: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/down.png',
+                hold: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/hold.png',
+                stared: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/stared.png',
+                star: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/star.png',
+                placeholderImg: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/game.png'
+            },
+            isDownload: false,
+            btnProgress: 0,
+            btnProgressText: this.isDownload ? '0%' : '下载'
+        };
+    },
+
+
+    computed: {
+        downloadBtnClass: function downloadBtnClass() {
+            return this.isDownload ? ['ui-btn', 'ui-btn-primary', 'ui-btn-progress'] : ['ui-btn'];
+        },
+        downloadBtnTextClass: function downloadBtnTextClass() {
+            return this.isDownload ? ['ui-btn-text', 'btn-progress-text'] : ['ui-btn-text'];
+        },
+        positionStyle: function positionStyle() {
+            return weex.config.env.platform == 'android' ? 'absolute' : 'fixed';
+        }
+    },
+    methods: {
+        sliderChanged: function sliderChanged(e) {
+            bbc.postMessage({ currentPage: e.index });
+        },
+        downloadGame: function downloadGame() {
+            var self = this;
+            var btnWidth = isWeb ? 68 : 136;
+            self.isDownload = true;
+            self.btnProgressText = self.isDownload ? '0%' : '下载';
+            var run = setInterval(function () {
+                self.btnProgress += 4;
+                self.btnProgressText = parseInt(self.btnProgress / btnWidth * 100) + '%';
+                if (self.btnProgress == btnWidth) {
+                    self.btnProgress = 0;
+                    self.isDownload = false;
+                    self.btnProgressText = '下载';
+                    clearInterval(run);
+                }
+            }, 50);
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 14:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('slider', {
+    staticClass: "slider",
+    attrs: {
+      "data-evt-change": ""
+    },
+    nativeOn: {
+      "change": function($event) {
+        $event.stopPropagation();
+        return _vm.sliderChanged($event)
+      }
+    }
+  }, _vm._l((7), function(v, i) {
+    return _c('list', {
+      staticClass: "ui-list",
+      attrs: {}
+    }, _vm._l((16), function(item, index) {
+      return _c('section', {
+        staticClass: "ui-list-cell weex-ct weex-cell",
+        attrs: {
+          "weex-type": "cell"
+        }
+      }, [_c('div', {
+        staticClass: "list-rank weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_c('p', {
+        staticClass: "list-rank-num weex-el weex-text",
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v(_vm._s(1 + index))]), _vm._v(" "), (false) ? _c('div', {
+        staticClass: " weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [(index == 0) ? _c('figure', {
+        staticClass: "rank-icon rank-up weex-el weex-image",
+        attrs: {
+          "src": _vm.linkImg.up,
+          "data-img-src": _vm.linkImg.up,
+          "weex-type": "image"
+        }
+      }) : _vm._e(), _vm._v(" "), (index == 1) ? _c('figure', {
+        staticClass: "rank-icon rank-down weex-el weex-image",
+        attrs: {
+          "src": _vm.linkImg.down,
+          "data-img-src": _vm.linkImg.down,
+          "weex-type": "image"
+        }
+      }) : _vm._e(), _vm._v(" "), (index > 1) ? _c('figure', {
+        staticClass: "rank-icon rank-hold weex-el weex-image",
+        attrs: {
+          "src": _vm.linkImg.hold,
+          "data-img-src": _vm.linkImg.hold,
+          "weex-type": "image"
+        }
+      }) : _vm._e()]) : _vm._e()]), _vm._v(" "), _c('div', {
+        staticClass: "ui-list-inner weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_c('div', {
+        staticClass: "ui-list-thumb weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_c('figure', {
+        staticClass: "ui-list-img weex-el weex-image",
+        attrs: {
+          "src": _vm.linkImg.placeholderImg,
+          "data-img-src": _vm.linkImg.placeholderImg,
+          "weex-type": "image"
+        }
+      })]), _vm._v(" "), _c('div', {
+        staticClass: "ui-list-info weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_c('p', {
+        staticClass: "info-h3 weex-el weex-text",
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v("全民飞机全民飞机全民飞机全民飞机全民飞机")]), _vm._v(" "), _c('div', {
+        staticClass: "star-wrap weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_vm._l((4), function(s, j) {
+        return _c('figure', {
+          staticClass: "star weex-el weex-image",
+          attrs: {
+            "src": _vm.linkImg.stared,
+            "data-img-src": _vm.linkImg.stared,
+            "weex-type": "image"
+          }
+        })
+      }), _vm._v(" "), _c('figure', {
+        staticClass: "star weex-el weex-image",
+        attrs: {
+          "src": _vm.linkImg.star,
+          "data-img-src": _vm.linkImg.star,
+          "weex-type": "image"
+        }
+      }), _vm._v(" "), _c('p', {
+        staticClass: "scroe-text weex-el weex-text",
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v("9.2分")])], 2), _vm._v(" "), _c('p', {
+        staticClass: "info-p weex-el weex-text",
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v("293881人已安装")])]), _vm._v(" "), (index == 3) ? _c('div', {
+        staticClass: "wait weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_c('p', {
+        staticClass: "wait-text weex-el weex-text",
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v("敬请期待")])]) : _c('div', {
+        staticClass: "btn-position weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [(index != 2) ? _c('div', {
+        staticClass: "ui-btn weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }, [_c('p', {
+        staticClass: "ui-btn-text weex-el weex-text",
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v("下载")])]) : _vm._e(), _vm._v(" "), (index === 2) ? _c('div', {
+        staticClass: " weex-ct weex-div",
+        class: _vm.downloadBtnClass,
+        attrs: {
+          "weex-type": "div",
+          "data-evt-click": ""
+        },
+        on: {
+          "click": _vm.$stopOuterA,
+          "weex$tap": function($event) {
+            $event.stopPropagation();
+            return _vm.downloadGame($event)
+          }
+        }
+      }, [(_vm.isDownload) ? _c('div', {
+        staticClass: "btn-progress-inner weex-ct weex-div",
+        attrs: {
+          "weex-type": "div"
+        }
+      }) : _vm._e(), _vm._v(" "), (_vm.isDownload) ? _c('div', {
+        staticClass: "btn-progress-bar weex-ct weex-div",
+        style: ({
+          width: _vm._px2rem(_vm.btnProgress + 'px', 75)
+        }),
+        attrs: {
+          "weex-type": "div"
+        }
+      }) : _vm._e(), _vm._v(" "), _c('p', {
+        staticClass: " weex-el weex-text",
+        class: _vm.downloadBtnTextClass,
+        attrs: {
+          "weex-type": "text"
+        }
+      }, [_vm._v(_vm._s(_vm.btnProgressText))])]) : _vm._e()])])])
+    }))
+  }))
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-343daabe", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
 
 
 /***/ }),
@@ -9132,7 +9131,7 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(2), __webpack_require__(0), __webpack_require__(6).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(0), __webpack_require__(6).setImmediate))
 
 /***/ }),
 
@@ -9204,29 +9203,6 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (this && this.clearImmediate);
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-
-/***/ 67:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _vue = __webpack_require__(5);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _weexVueRender = __webpack_require__(8);
-
-var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_weexVueRender2.default.init(_vue2.default);
-
-var App = __webpack_require__(10);
-new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ }),
 
@@ -9420,7 +9396,30 @@ new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
+
+/***/ }),
+
+/***/ 73:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vue = __webpack_require__(5);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _weexVueRender = __webpack_require__(8);
+
+var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_weexVueRender2.default.init(_vue2.default);
+
+var App = __webpack_require__(10);
+new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ }),
 

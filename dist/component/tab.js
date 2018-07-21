@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 47);
+/******/ 	return __webpack_require__(__webpack_require__.s = 52);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -112,23 +112,6 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 47:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _tab = __webpack_require__(4);
-
-var _tab2 = _interopRequireDefault(_tab);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_tab2.default.el = '#root';
-new Vue(_tab2.default);
-
-/***/ }),
-
 /***/ 5:
 /***/ (function(module, exports) {
 
@@ -136,10 +119,7 @@ module.exports = {
   "ui-tab": {
     "flexDirection": "row",
     "height": "88",
-    "flexWrap": "nowrap",
-    "//borderBottomWidth": "1",
-    "//borderBottomColor": "#E9E9E9",
-    "//borderBottomStyle": "solid"
+    "flexWrap": "nowrap"
   },
   "ui-tab-item": {
     "marginLeft": "25",
@@ -171,7 +151,7 @@ module.exports = {
   "tab-scroller": {
     "flexDirection": "row",
     "position": "fixed",
-    "top": "0",
+    "top": "100",
     "width": "750",
     "height": "89",
     "zIndex": 2,
@@ -179,13 +159,30 @@ module.exports = {
   },
   "line": {
     "position": "fixed",
-    "top": "88",
+    "top": "188",
     "left": 0,
     "width": "750",
     "height": "1",
     "backgroundColor": "#E9E9E9"
   }
 }
+
+/***/ }),
+
+/***/ 52:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _tab = __webpack_require__(4);
+
+var _tab2 = _interopRequireDefault(_tab);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_tab2.default.el = '#root';
+new Vue(_tab2.default);
 
 /***/ }),
 
@@ -224,8 +221,7 @@ exports.default = {
     created: function created() {
         var that = this;
         bbc.onmessage = function (event) {
-
-            // that.changeTab(event.data.currentPage);
+            that.changeTab(event.data.currentPage);
         };
     },
     methods: {

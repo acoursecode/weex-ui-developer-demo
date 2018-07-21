@@ -62,26 +62,43 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 62);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 24:
+/***/ 46:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _sliderList = __webpack_require__(47);
+
+var _sliderList2 = _interopRequireDefault(_sliderList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_sliderList2.default.el = '#root';
+new Vue(_sliderList2.default);
+
+/***/ }),
+
+/***/ 47:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(25)
+__vue_styles__.push(__webpack_require__(48)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(26)
+__vue_exports__ = __webpack_require__(49)
 
 /* template */
-var __vue_template__ = __webpack_require__(27)
+var __vue_template__ = __webpack_require__(50)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -93,10 +110,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/page/demo1-3-b.vue"
+__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/slider-list.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-4a59d7d2"
+__vue_options__._scopeId = "data-v-604b35df"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -112,127 +129,64 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 25:
+/***/ 48:
 /***/ (function(module, exports) {
 
 module.exports = {
-  "h2": {
-    "marginTop": "30",
-    "fontSize": "50",
-    "textAlign": "center",
-    "height": "110",
-    "lineHeight": "110"
-  },
-  "banner": {
-    "width": "750",
-    "height": "400"
-  },
-  "image": {
-    "width": "750",
-    "height": "400"
-  },
-  "banner-item": {
-    "width": "750",
-    "height": "400",
-    "position": "relative"
-  },
-  "banner-indicator": {
-    "width": "750",
-    "height": "20",
-    "itemColor": "rgba(255,255,255,0.5)",
-    "itemSelectedColor": "rgba(255,255,255,1)",
-    "itemSize": "20",
-    "position": "absolute",
-    "left": 0,
-    "bottom": "50"
+  "aaa": {
+    "width": "200",
+    "height": "500",
+    "backgroundColor": "#000000"
   }
 }
 
 /***/ }),
 
-/***/ 26:
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 //
 //
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
+var modal = weex.requireModule('modal');
+var bbc = new BroadcastChannel('game-list');
 exports.default = {
-  name: 'App',
-  components: {},
-  data: function data() {
-    return {
-      imageList: []
-    };
-  },
-  created: function created() {
-    this.imageList = [{ src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg' }];
-  }
+    data: function data() {
+        return {};
+    },
+
+    created: function created() {
+        modal.alert({
+            message: 'This is aaa'
+        });
+        var that = this;
+        bbc.onmessage = function (event) {
+            // that.changeTab(event.data.currentPage);
+        };
+    },
+    methods: {}
 };
 
 /***/ }),
 
-/***/ 27:
+/***/ 50:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('text', {
-    staticClass: ["h2"]
-  }, [_vm._v("组件嵌套 & 私有样式")]), _c('slider', {
-    staticClass: ["banner"],
-    attrs: {
-      "interval": "4000",
-      "autoPlay": "true"
-    }
-  }, [_vm._l((_vm.imageList), function(img) {
-    return _c('div', {
-      staticClass: ["banner-item"]
-    }, [_c('image', {
-      staticClass: ["image"],
-      attrs: {
-        "resize": "cover",
-        "src": img.src
-      }
-    })])
-  }), _c('indicator', {
-    staticClass: ["banner-indicator"]
-  })], 2)])
+  return _c('slider', {
+    staticClass: ["slider"]
+  })
 },staticRenderFns: []}
 module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 62:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _demo13B = __webpack_require__(24);
-
-var _demo13B2 = _interopRequireDefault(_demo13B);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_demo13B2.default.el = '#root';
-new Vue(_demo13B2.default);
 
 /***/ })
 

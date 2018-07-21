@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 58);
+/******/ 	return __webpack_require__(__webpack_require__.s = 63);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -245,7 +245,7 @@ module.exports = {
   },
   "slider": {
     "position": "absolute",
-    "top": "88",
+    "top": "188",
     "bottom": "0",
     "width": "750"
   },
@@ -361,7 +361,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 //
 //
 //
-//
 
 var platform = weex.config.env.platform;
 
@@ -401,7 +400,7 @@ exports.default = {
     },
     methods: {
         sliderChanged: function sliderChanged(e) {
-            // bbc.postMessage({currentPage:e.index});
+            bbc.postMessage({ currentPage: e.index });
         },
         downloadGame: function downloadGame() {
             var self = this;
@@ -472,7 +471,15 @@ module.exports = __vue_exports__
 /***/ 29:
 /***/ (function(module, exports) {
 
-module.exports = {}
+module.exports = {
+  "wrapper-inner": {
+    "position": "absolute",
+    "top": 0,
+    "bottom": 0,
+    "width": "750",
+    "backgroundColor": "#ffffff"
+  }
+}
 
 /***/ }),
 
@@ -485,7 +492,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "change": _vm.sliderChanged
     }
-  }, _vm._l((7), function(item, i) {
+  }, _vm._l((7), function(v, i) {
     return _c('list', {
       staticClass: ["ui-list"]
     }, _vm._l((16), function(item, index) {
@@ -529,7 +536,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: ["info-h3"]
       }, [_vm._v("全民飞机全民飞机全民飞机全民飞机全民飞机")]), _c('div', {
         staticClass: ["star-wrap"]
-      }, [_vm._l((4), function(item) {
+      }, [_vm._l((4), function(s, j) {
         return _c('image', {
           staticClass: ["star"],
           attrs: {
@@ -608,13 +615,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   name: 'App',
   components: {
-    Slider: _slider2.default, Tab: _tab2.default
+    SliderList: _slider2.default, Tab: _tab2.default
   },
   data: function data() {
-    return {};
+    return {
+      imageList: []
+    };
   },
-
-  created: function created() {}
+  created: function created() {
+    this.imageList = [{ src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg' }];
+  }
 };
 
 /***/ }),
@@ -624,8 +634,8 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('Slider'), _c('Tab')], 1)
+    staticClass: ["wrapper-inner"]
+  }, [_c('Tab'), _c('SliderList')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -683,10 +693,7 @@ module.exports = {
   "ui-tab": {
     "flexDirection": "row",
     "height": "88",
-    "flexWrap": "nowrap",
-    "//borderBottomWidth": "1",
-    "//borderBottomColor": "#E9E9E9",
-    "//borderBottomStyle": "solid"
+    "flexWrap": "nowrap"
   },
   "ui-tab-item": {
     "marginLeft": "25",
@@ -718,7 +725,7 @@ module.exports = {
   "tab-scroller": {
     "flexDirection": "row",
     "position": "fixed",
-    "top": "0",
+    "top": "100",
     "width": "750",
     "height": "89",
     "zIndex": 2,
@@ -726,30 +733,13 @@ module.exports = {
   },
   "line": {
     "position": "fixed",
-    "top": "88",
+    "top": "188",
     "left": 0,
     "width": "750",
     "height": "1",
     "backgroundColor": "#E9E9E9"
   }
 }
-
-/***/ }),
-
-/***/ 58:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _demo = __webpack_require__(28);
-
-var _demo2 = _interopRequireDefault(_demo);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_demo2.default.el = '#root';
-new Vue(_demo2.default);
 
 /***/ }),
 
@@ -788,8 +778,7 @@ exports.default = {
     created: function created() {
         var that = this;
         bbc.onmessage = function (event) {
-
-            // that.changeTab(event.data.currentPage);
+            that.changeTab(event.data.currentPage);
         };
     },
     methods: {
@@ -798,6 +787,23 @@ exports.default = {
         }
     }
 };
+
+/***/ }),
+
+/***/ 63:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _demo = __webpack_require__(28);
+
+var _demo2 = _interopRequireDefault(_demo);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_demo2.default.el = '#root';
+new Vue(_demo2.default);
 
 /***/ }),
 
