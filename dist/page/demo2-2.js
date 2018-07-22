@@ -62,26 +62,43 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 65);
+/******/ 	return __webpack_require__(__webpack_require__.s = 305);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 36:
+/***/ 305:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _demo = __webpack_require__(50);
+
+var _demo2 = _interopRequireDefault(_demo);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_demo2.default.el = '#root';
+new Vue(_demo2.default);
+
+/***/ }),
+
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(37)
+__vue_styles__.push(__webpack_require__(51)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(38)
+__vue_exports__ = __webpack_require__(52)
 
 /* template */
-var __vue_template__ = __webpack_require__(39)
+var __vue_template__ = __webpack_require__(53)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -112,7 +129,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 37:
+/***/ 51:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -179,7 +196,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 38:
+/***/ 52:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -229,7 +246,6 @@ exports.default = {
       this.animating = true;
     },
     doJsAnimation: function doJsAnimation() {
-      modal.toast({ message: '动画开始' });
       var juhua = this.$refs.juhua;
       animation.transition(juhua, {
         styles: {
@@ -239,16 +255,14 @@ exports.default = {
         timingFunction: 'ease',
         needLayout: false,
         delay: 0 //ms
-      }, function () {
-        modal.toast({ message: '动画结束' });
-      });
+      }, function () {});
     }
   }
 };
 
 /***/ }),
 
-/***/ 39:
+/***/ 53:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -291,23 +305,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 65:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _demo = __webpack_require__(36);
-
-var _demo2 = _interopRequireDefault(_demo);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_demo2.default.el = '#root';
-new Vue(_demo2.default);
 
 /***/ })
 

@@ -62,26 +62,43 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 66);
+/******/ 	return __webpack_require__(__webpack_require__.s = 306);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 40:
+/***/ 306:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _demo = __webpack_require__(54);
+
+var _demo2 = _interopRequireDefault(_demo);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_demo2.default.el = '#root';
+new Vue(_demo2.default);
+
+/***/ }),
+
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(41)
+__vue_styles__.push(__webpack_require__(55)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(42)
+__vue_exports__ = __webpack_require__(56)
 
 /* template */
-var __vue_template__ = __webpack_require__(44)
+var __vue_template__ = __webpack_require__(58)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -112,409 +129,108 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 41:
+/***/ 55:
 /***/ (function(module, exports) {
 
 module.exports = {
-  "container": {
-    "flex": 1,
-    "backgroundColor": "#eeeeee"
+  "iconfont-http": {
+    "fontFamily": "iconfont-http"
   },
-  "border": {
-    "height": 1000,
-    "paddingLeft": 35,
-    "paddingRight": 35,
-    "paddingTop": 100
+  "h2": {
+    "marginTop": "30",
+    "fontSize": "50",
+    "textAlign": "center",
+    "height": "110",
+    "lineHeight": "110"
   },
-  "box": {
-    "width": 680,
-    "height": 450,
-    "backgroundColor": "#651FFF"
+  "card": {
+    "top": "300",
+    "position": "absolute",
+    "left": "75",
+    "width": "600",
+    "height": "480",
+    "backgroundColor": "#000000",
+    "borderRadius": "8"
   },
-  "head": {
-    "backgroundColor": "#651FFF",
-    "width": 680,
-    "height": 120,
-    "flexDirection": "row",
-    "alignItems": "center"
-  },
-  "content": {
-    "width": 680,
-    "height": 240,
-    "backgroundColor": "#651FFF",
-    "paddingLeft": 24,
-    "paddingTop": 24,
-    "paddingRight": 24,
-    "boxSizing": "border-box"
-  },
-  "footer": {
-    "width": 680,
-    "height": 90,
-    "backgroundColor": "#ffffff",
-    "alignItems": "center",
-    "justifyContent": "flex-end",
-    "paddingRight": 25,
-    "flexDirection": "row",
-    "boxSizing": "border-box"
-  },
-  "action": {
-    "fontSize": 35,
-    "paddingRight": 20
-  },
-  "desc": {
-    "fontSize": 32,
+  "card-text": {
+    "height": "600",
+    "lineHeight": "480",
     "color": "#ffffff",
-    "paddingLeft": 24
-  },
-  "avatar": {
-    "width": 96,
-    "height": 96,
-    "borderRadius": 48,
-    "backgroundColor": "#CDDC39",
-    "marginLeft": 36,
-    "marginRight": 48
-  },
-  "username": {
-    "color": "#ffffff",
-    "fontSize": 32
+    "fontSize": "60",
+    "textAlign": "center"
   }
 }
 
 /***/ }),
 
-/***/ 42:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _weexBindingx = __webpack_require__(43);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-var _weexBindingx2 = _interopRequireDefault(_weexBindingx);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = {
-  data: {
-    x: 0,
-    y: 0,
-    isInAnimation: false,
-    gesToken: 0,
-    opacity: 1
+var modal = weex.requireModule('modal');
+var bindingx = __webpack_require__(57);
+exports.default = {
+  name: 'App',
+  components: {},
+  data: function data() {
+    return {
+      beforeCreateTest: 1,
+      createdTest: 0,
+      beforeMountTest: 0,
+      mountedTest: 0,
+      beforeDistroyTest: 0,
+      destroyedTest: 0
+    };
   },
+  mounted: function mounted() {
+    // this.bindingxAnimation();
+  },
+
   methods: {
+    ontouchstart: function ontouchstart() {
 
-    getEl: function getEl(e) {
-      return e.ref;
-    },
-    touchStart: function touchStart(e) {
-      var self = this;
-      if (this.isInAnimation === true) {
-        console.log('we are in animation, drop pan gesture...');
-        if (this.gesToken) {
-          _weexBindingx2.default.unbind({
-            eventType: 'pan',
-            token: self.gesToken
-          });
-          this.gesToken = undefined;
-        }
-        return;
-      }
-
-      var my = this.getEl(this.$refs.my);
-      var translate_x_origin = 'x+0';
-
-      var opacity_x_origin = '1-abs(x)/600';
-      console.log(my);
-      var gesTokenObj = _weexBindingx2.default.bind({
-        anchor: my,
+      var el = this.$refs.card.ref;
+      // modal.alert({
+      //   message: el
+      // })
+      var result = bindingx.bind({
         eventType: 'pan',
+        anchor: el,
         props: [{
-          element: my,
+          element: el,
           property: 'transform.translateX',
-          expression: translate_x_origin
-        }, {
-          element: my,
-          property: 'opacity',
-          expression: opacity_x_origin
-        }]
-      }, function (e) {
-        if (e.state === 'end') {
-          self.x += e.deltaX;
-          self.y += e.deltaY;
-          self.opacity = 1 - Math.abs(e.deltaX) / 600;
-
-          // anim
-          self.bindTiming();
-        }
-      });
-
-      self.gesToken = gesTokenObj.token;
-    },
-    bindTiming: function bindTiming() {
-      this.isInAnimation = true;
-
-      var my = this.getEl(this.$refs.my);
-      var self = this;
-
-      // should equal with timing duration
-      var exit_origin = 't>1000';
-
-      var changed_x;
-      var final_x;
-
-      var final_opacity;
-
-      var translate_x_origin;
-
-      var shouldDismiss = false;
-
-      if (self.x >= -750 / 2 && self.x <= 750 / 2) {
-
-        shouldDismiss = false;
-        final_x = 0;
-        changed_x = 0 - self.x;
-        final_opacity = 1;
-        translate_x_origin = 'easeOutElastic(t,' + self.x + ',' + changed_x + ',1000)';
-      } else if (self.x < -750 / 2) {
-        shouldDismiss = true;
-        final_x = -750;
-        changed_x = -750 - self.x;
-        final_opacity = 0;
-        translate_x_origin = 'easeOutExpo(t,' + self.x + ',' + changed_x + ',1000)';
-      } else {
-        // x > 750/2
-        final_x = 750;
-        shouldDismiss = true;
-        changed_x = 750 - self.x;
-        final_opacity = 0;
-        translate_x_origin = 'easeOutExpo(t,' + self.x + ',' + changed_x + ',1000)';
-      }
-
-      var changed_opacity = final_opacity - self.opacity;
-      var opacity_origin = 'linear(t,' + self.opacity + ',' + changed_opacity + ',1000)';
-
-      var result = _weexBindingx2.default.bind({
-        eventType: 'timing',
-        exitExpression: exit_origin,
-        props: [{
-          element: my,
-          property: 'transform.translateX',
-          expression: translate_x_origin
-        }, {
-          element: my,
-          property: 'opacity',
-          expression: opacity_origin
-        }]
-
-      }, function (e) {
-        if (e.state === 'end' || e.state === 'exit') {
-          // reset x
-          self.x = final_x;
-          self.isInAnimation = false;
-
-          if (shouldDismiss) {
-            // remove card from hierarchy
+          expression: {
+            origin: "x+10"
           }
-        }
-      });
+        }, {
+          element: el,
+          property: 'opacity',
+          expression: '1-abs(x)/600'
+        }]
+      }, function (e) {});
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
 
-/***/ 43:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1930,77 +1646,25 @@ var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbo
 
 /***/ }),
 
-/***/ 44:
+/***/ 58:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["container"]
-  }, [_c('div', {
-    staticClass: ["border"]
-  }, [_c('div', {
-    ref: "my",
-    staticClass: ["box"],
+    staticClass: ["wrapper"]
+  }, [_c('text', {
+    staticClass: ["h2"]
+  }, [_vm._v("BindingX 手势动画")]), _c('div', {
+    ref: 'card',
+    staticClass: ["card"],
     on: {
-      "touchstart": _vm.touchStart
-    }
-  }, [_vm._m(0), _vm._m(1), _vm._m(2)])]), _vm._m(3)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["head"]
-  }, [_c('div', {
-    staticClass: ["avatar"]
-  }), _c('text', {
-    staticClass: ["username"]
-  }, [_vm._v("HACKER")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["content"]
-  }, [_c('text', {
-    staticClass: ["desc"]
-  }, [_vm._v("Google announced a new version of Nearby Connections for fully offline.high\n                bandwidth peer to peer device communications.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["footer"]
-  }, [_c('text', {
-    staticClass: ["action"]
-  }, [_vm._v("SHARE")]), _c('text', {
-    staticClass: ["action"],
-    staticStyle: {
-      color: "#7C4DFF"
-    }
-  }, [_vm._v("EXPLORE")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticStyle: {
-      width: "750",
-      alignItems: "center",
-      justifyContent: "center"
+      "touchstart": _vm.ontouchstart
     }
   }, [_c('text', {
-    staticStyle: {
-      fontSize: "40"
-    }
-  }, [_vm._v("Swipeable Card")])])
-}]}
+    staticClass: ["card-text"]
+  }, [_vm._v("卡片")])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 66:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _demo = __webpack_require__(40);
-
-var _demo2 = _interopRequireDefault(_demo);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_demo2.default.el = '#root';
-new Vue(_demo2.default);
 
 /***/ })
 
