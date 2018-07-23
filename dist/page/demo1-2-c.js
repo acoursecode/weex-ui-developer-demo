@@ -62,26 +62,26 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 60);
+/******/ 	return __webpack_require__(__webpack_require__.s = 300);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 16:
+/***/ 30:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(17)
+__vue_styles__.push(__webpack_require__(31)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(18)
+__vue_exports__ = __webpack_require__(32)
 
 /* template */
-var __vue_template__ = __webpack_require__(19)
+var __vue_template__ = __webpack_require__(33)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -112,7 +112,24 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 17:
+/***/ 300:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _demo12C = __webpack_require__(30);
+
+var _demo12C2 = _interopRequireDefault(_demo12C);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_demo12C2.default.el = '#root';
+new Vue(_demo12C2.default);
+
+/***/ }),
+
+/***/ 31:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -137,17 +154,20 @@ module.exports = {
   "a": {
     "left": "10",
     "top": "10",
-    "backgroundColor": "#ff9300"
+    "backgroundColor": "#ff9300",
+    "zIndex": 3
   },
   "b": {
     "left": "160",
     "top": "160",
+    "zIndex": 2,
     "backgroundColor": "#e60012"
   },
   "c": {
     "left": "310",
     "top": "310",
-    "backgroundColor": "#00a0e9"
+    "backgroundColor": "#00a0e9",
+    "zIndex": 1
   },
   "t": {
     "fontSize": "50",
@@ -160,7 +180,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 18:
+/***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -202,7 +222,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 19:
+/***/ 33:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -229,23 +249,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("C")])])])])
 }]}
 module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 60:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _demo12C = __webpack_require__(16);
-
-var _demo12C2 = _interopRequireDefault(_demo12C);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_demo12C2.default.el = '#root';
-new Vue(_demo12C2.default);
 
 /***/ })
 

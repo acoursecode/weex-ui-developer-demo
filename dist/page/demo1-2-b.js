@@ -62,26 +62,26 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 59);
+/******/ 	return __webpack_require__(__webpack_require__.s = 299);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 12:
+/***/ 26:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(13)
+__vue_styles__.push(__webpack_require__(27)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(14)
+__vue_exports__ = __webpack_require__(28)
 
 /* template */
-var __vue_template__ = __webpack_require__(15)
+var __vue_template__ = __webpack_require__(29)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -112,7 +112,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 13:
+/***/ 27:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -179,14 +179,14 @@ module.exports = {
     "color": "#ffffff"
   },
   "grid-item-image": {
-    "width": 100,
-    "height": 100
+    "width": "247",
+    "height": "247"
   }
 }
 
 /***/ }),
 
-/***/ 14:
+/***/ 28:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -290,7 +290,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 15:
+/***/ 29:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -407,13 +407,13 @@ module.exports.render._withStripped = true
 
 /***/ }),
 
-/***/ 59:
+/***/ 299:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _demo12B = __webpack_require__(12);
+var _demo12B = __webpack_require__(26);
 
 var _demo12B2 = _interopRequireDefault(_demo12B);
 

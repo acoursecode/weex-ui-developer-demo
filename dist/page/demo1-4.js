@@ -62,26 +62,345 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 63);
+/******/ 	return __webpack_require__(__webpack_require__.s = 303);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 0:
+/***/ 10:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(1)
+__vue_styles__.push(__webpack_require__(11)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(2)
+__vue_exports__ = __webpack_require__(12)
 
 /* template */
-var __vue_template__ = __webpack_require__(3)
+var __vue_template__ = __webpack_require__(13)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/tab.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-ef6bf22c"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 11:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "ui-tab": {
+    "flexDirection": "row",
+    "height": "88",
+    "flexWrap": "nowrap"
+  },
+  "ui-tab-item": {
+    "marginLeft": "25",
+    "marginRight": "25",
+    "justifyContent": "center",
+    "position": "relative"
+  },
+  "tab-indicator": {
+    "content": "\"\"",
+    "position": "absolute",
+    "left": "0",
+    "bottom": 0,
+    "right": "0",
+    "height": "4",
+    "backgroundImage": "linear-gradient(to right, #E6BC5C,rgba(255, 217, 128, 0.99))"
+  },
+  "item-text": {
+    "textAlign": "center",
+    "fontSize": "32"
+  },
+  "item-text-active": {
+    "color": "#E6B035"
+  },
+  "tab-btn": {
+    "position": "absolute",
+    "right": "30",
+    "top": "60"
+  },
+  "tab-scroller": {
+    "flexDirection": "row",
+    "position": "fixed",
+    "top": "100",
+    "width": "750",
+    "height": "89",
+    "zIndex": 2,
+    "backgroundColor": "#ffffff"
+  },
+  "line": {
+    "position": "fixed",
+    "top": "188",
+    "left": 0,
+    "width": "750",
+    "height": "1",
+    "backgroundColor": "#E9E9E9"
+  }
+}
+
+/***/ }),
+
+/***/ 12:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var bbc = new BroadcastChannel('game-list');
+exports.default = {
+    data: function data() {
+        return {
+            list: ['热门', '角色', '射击', '卡牌', '策略', '动作', '竞技'],
+            tabIndex: 0
+        };
+    },
+
+    created: function created() {
+        var that = this;
+        bbc.onmessage = function (event) {
+            that.changeTab(event.data.currentPage);
+        };
+    },
+    methods: {
+        changeTab: function changeTab(index) {
+            this.tabIndex = index;
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 13:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('scroller', {
+    staticClass: ["tab-scroller"],
+    attrs: {
+      "scrollDirection": "horizontal",
+      "showScrollbar": "false"
+    }
+  }, [_c('div', {
+    staticClass: ["line"]
+  }), _c('div', {
+    staticClass: ["ui-tab"]
+  }, _vm._l((_vm.list), function(item, index) {
+    return _c('div', {
+      ref: 'tabItem' + index,
+      refInFor: true,
+      staticClass: ["ui-tab-item"]
+    }, [_c('text', {
+      staticClass: ["item-text"],
+      class: _vm.tabIndex == index ? ['item-text-active'] : [''],
+      on: {
+        "click": function($event) {
+          _vm.changeTab(index)
+        }
+      }
+    }, [_vm._v(_vm._s(item))]), (_vm.tabIndex == index) ? _c('div', {
+      staticClass: ["tab-indicator"]
+    }) : _vm._e()])
+  }))])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 303:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _demo = __webpack_require__(42);
+
+var _demo2 = _interopRequireDefault(_demo);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_demo2.default.el = '#root';
+new Vue(_demo2.default);
+
+/***/ }),
+
+/***/ 42:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(43)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(44)
+
+/* template */
+var __vue_template__ = __webpack_require__(45)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/page/demo1-4.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-256e113e"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 43:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "wrapper-inner": {
+    "position": "absolute",
+    "top": 0,
+    "bottom": 0,
+    "width": "750",
+    "backgroundColor": "#ffffff"
+  }
+}
+
+/***/ }),
+
+/***/ 44:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slider = __webpack_require__(6);
+
+var _slider2 = _interopRequireDefault(_slider);
+
+var _tab = __webpack_require__(10);
+
+var _tab2 = _interopRequireDefault(_tab);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'App',
+  components: {
+    SliderList: _slider2.default, Tab: _tab2.default
+  },
+  data: function data() {
+    return {
+      imageList: []
+    };
+  },
+  created: function created() {
+    this.imageList = [{ src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg' }];
+  }
+};
+
+/***/ }),
+
+/***/ 45:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper-inner"]
+  }, [_c('Tab'), _c('SliderList')], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 6:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(7)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(8)
+
+/* template */
+var __vue_template__ = __webpack_require__(9)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -112,7 +431,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 1:
+/***/ 7:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -304,7 +623,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2:
+/***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -423,67 +742,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 28:
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(29)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(30)
-
-/* template */
-var __vue_template__ = __webpack_require__(31)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/page/demo1-4.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-256e113e"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 29:
-/***/ (function(module, exports) {
-
-module.exports = {
-  "wrapper-inner": {
-    "position": "absolute",
-    "top": 0,
-    "bottom": 0,
-    "width": "750",
-    "backgroundColor": "#ffffff"
-  }
-}
-
-/***/ }),
-
-/***/ 3:
+/***/ 9:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -579,265 +838,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }, [_vm._v(_vm._s(_vm.btnProgressText))])]) : _vm._e()])])])
     }))
   }))
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 30:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _slider = __webpack_require__(0);
-
-var _slider2 = _interopRequireDefault(_slider);
-
-var _tab = __webpack_require__(4);
-
-var _tab2 = _interopRequireDefault(_tab);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-  name: 'App',
-  components: {
-    SliderList: _slider2.default, Tab: _tab2.default
-  },
-  data: function data() {
-    return {
-      imageList: []
-    };
-  },
-  created: function created() {
-    this.imageList = [{ src: 'https://gd2.alicdn.com/bao/uploaded/i2/T14H1LFwBcXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd1.alicdn.com/bao/uploaded/i1/TB1PXJCJFXXXXciXFXXXXXXXXXX_!!0-item_pic.jpg' }, { src: 'https://gd3.alicdn.com/bao/uploaded/i3/TB1x6hYLXXXXXazXVXXXXXXXXXX_!!0-item_pic.jpg' }];
-  }
-};
-
-/***/ }),
-
-/***/ 31:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper-inner"]
-  }, [_c('Tab'), _c('SliderList')], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(5)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(6)
-
-/* template */
-var __vue_template__ = __webpack_require__(7)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/tab.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-ef6bf22c"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 5:
-/***/ (function(module, exports) {
-
-module.exports = {
-  "ui-tab": {
-    "flexDirection": "row",
-    "height": "88",
-    "flexWrap": "nowrap"
-  },
-  "ui-tab-item": {
-    "marginLeft": "25",
-    "marginRight": "25",
-    "justifyContent": "center",
-    "position": "relative"
-  },
-  "tab-indicator": {
-    "content": "\"\"",
-    "position": "absolute",
-    "left": "0",
-    "bottom": 0,
-    "right": "0",
-    "height": "4",
-    "backgroundImage": "linear-gradient(to right, #E6BC5C,rgba(255, 217, 128, 0.99))"
-  },
-  "item-text": {
-    "textAlign": "center",
-    "fontSize": "32"
-  },
-  "item-text-active": {
-    "color": "#E6B035"
-  },
-  "tab-btn": {
-    "position": "absolute",
-    "right": "30",
-    "top": "60"
-  },
-  "tab-scroller": {
-    "flexDirection": "row",
-    "position": "fixed",
-    "top": "100",
-    "width": "750",
-    "height": "89",
-    "zIndex": 2,
-    "backgroundColor": "#ffffff"
-  },
-  "line": {
-    "position": "fixed",
-    "top": "188",
-    "left": 0,
-    "width": "750",
-    "height": "1",
-    "backgroundColor": "#E9E9E9"
-  }
-}
-
-/***/ }),
-
-/***/ 6:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var bbc = new BroadcastChannel('game-list');
-exports.default = {
-    data: function data() {
-        return {
-            list: ['热门', '角色', '射击', '卡牌', '策略', '动作', '竞技'],
-            tabIndex: 0
-        };
-    },
-
-    created: function created() {
-        var that = this;
-        bbc.onmessage = function (event) {
-            that.changeTab(event.data.currentPage);
-        };
-    },
-    methods: {
-        changeTab: function changeTab(index) {
-            this.tabIndex = index;
-        }
-    }
-};
-
-/***/ }),
-
-/***/ 63:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _demo = __webpack_require__(28);
-
-var _demo2 = _interopRequireDefault(_demo);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_demo2.default.el = '#root';
-new Vue(_demo2.default);
-
-/***/ }),
-
-/***/ 7:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('scroller', {
-    staticClass: ["tab-scroller"],
-    attrs: {
-      "scrollDirection": "horizontal",
-      "showScrollbar": "false"
-    }
-  }, [_c('div', {
-    staticClass: ["line"]
-  }), _c('div', {
-    staticClass: ["ui-tab"]
-  }, _vm._l((_vm.list), function(item, index) {
-    return _c('div', {
-      ref: 'tabItem' + index,
-      refInFor: true,
-      staticClass: ["ui-tab-item"]
-    }, [_c('text', {
-      staticClass: ["item-text"],
-      class: _vm.tabIndex == index ? ['item-text-active'] : [''],
-      on: {
-        "click": function($event) {
-          _vm.changeTab(index)
-        }
-      }
-    }, [_vm._v(_vm._s(item))]), (_vm.tabIndex == index) ? _c('div', {
-      staticClass: ["tab-indicator"]
-    }) : _vm._e()])
-  }))])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

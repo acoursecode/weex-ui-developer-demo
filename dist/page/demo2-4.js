@@ -1692,6 +1692,8 @@ exports.default = {
       final_x = 0;
       changed_x = 0 - self.x;
       final_opacity = 1;
+
+      //差值器
       translate_x_expression = "easeOutElastic(t," + self.x + "," + changed_x + ",1000)";
       // }
 

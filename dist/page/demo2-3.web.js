@@ -8946,7 +8946,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.iconfont-http[data-v-4d987a20]{\n  font-family: iconfont-http\n}\n.h2[data-v-4d987a20]{\n  margin-top: 0.4rem;\n  font-size: 0.66667rem;\n  text-align: center;\n  height: 1.46667rem;\n  line-height: 1.46667rem;\n}\n.card[data-v-4d987a20]{\n  top:4rem;\n  position: absolute;\n  left: 1rem;\n  width: 8rem;\n  height: 6.4rem;\n  background-color:#000;\n  border-radius: 0.10667rem;\n}\n.card-text[data-v-4d987a20]{\n  height: 8rem;\n  line-height: 6.4rem;\n  color:#fff; \n  font-size: 0.8rem;\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.h2[data-v-4d987a20]{\n  margin-top: 0.4rem;\n  font-size: 0.66667rem;\n  text-align: center;\n  height: 1.46667rem;\n  line-height: 1.46667rem;\n}\n.card[data-v-4d987a20]{\n  top:4rem;\n  position: absolute;\n  left: 1rem;\n  width: 8rem;\n  height: 6.4rem;\n  background-color:#000;\n  border-radius: 0.10667rem;\n}\n.card-text[data-v-4d987a20]{\n  height: 8rem;\n  line-height: 6.4rem;\n  color:#fff; \n  font-size: 0.8rem;\n  text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -8975,30 +8975,18 @@ Object.defineProperty(exports, "__esModule", {
 
 var modal = weex.requireModule('modal');
 var bindingx = __webpack_require__(78);
+
 exports.default = {
   name: 'App',
   components: {},
   data: function data() {
-    return {
-      beforeCreateTest: 1,
-      createdTest: 0,
-      beforeMountTest: 0,
-      mountedTest: 0,
-      beforeDistroyTest: 0,
-      destroyedTest: 0
-    };
+    return {};
   },
-  mounted: function mounted() {
-    // this.bindingxAnimation();
-  },
+  mounted: function mounted() {},
 
   methods: {
     ontouchstart: function ontouchstart() {
-
       var el = this.$refs.card.ref;
-      // modal.alert({
-      //   message: el
-      // })
       var result = bindingx.bind({
         eventType: 'pan',
         anchor: el,

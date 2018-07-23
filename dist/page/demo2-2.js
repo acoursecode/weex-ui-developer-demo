@@ -133,9 +133,6 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
-  "iconfont-http": {
-    "fontFamily": "iconfont-http"
-  },
   "btn": {
     "width": "300",
     "height": "120",

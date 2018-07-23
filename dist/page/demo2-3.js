@@ -133,9 +133,6 @@ module.exports = __vue_exports__
 /***/ (function(module, exports) {
 
 module.exports = {
-  "iconfont-http": {
-    "fontFamily": "iconfont-http"
-  },
   "h2": {
     "marginTop": "30",
     "fontSize": "50",
@@ -185,30 +182,18 @@ Object.defineProperty(exports, "__esModule", {
 
 var modal = weex.requireModule('modal');
 var bindingx = __webpack_require__(57);
+
 exports.default = {
   name: 'App',
   components: {},
   data: function data() {
-    return {
-      beforeCreateTest: 1,
-      createdTest: 0,
-      beforeMountTest: 0,
-      mountedTest: 0,
-      beforeDistroyTest: 0,
-      destroyedTest: 0
-    };
+    return {};
   },
-  mounted: function mounted() {
-    // this.bindingxAnimation();
-  },
+  mounted: function mounted() {},
 
   methods: {
     ontouchstart: function ontouchstart() {
-
       var el = this.$refs.card.ref;
-      // modal.alert({
-      //   message: el
-      // })
       var result = bindingx.bind({
         eventType: 'pan',
         anchor: el,

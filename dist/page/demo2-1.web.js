@@ -8875,7 +8875,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.h2[data-v-4d7c4b1e]{\n  font-size: 0.66667rem;\n  text-align: center;\n  height: 1.46667rem;\n  line-height: 1.46667rem;\n}\n.grid-3[data-v-4d7c4b1e]{ \n  padding-top: 0.26667rem;\n  flex-direction:row;\n}\n.grid-item[data-v-4d7c4b1e]{\n  text-align:center;\n  width: 3.33333rem;\n  height: 3.33333rem;\n  line-height: 3.33333rem;\n  font-size:1.33333rem;\n  background-color:#000;\n  color:#ffffff;\n  border-right-width: 0.02667rem;\n  border-right-style: solid;\n  border-right-color: #fff;\n}\n.grid-3-equal[data-v-4d7c4b1e]{\n  justify-content: space-between;\n}\n.last[data-v-4d7c4b1e]{\n  border-right-width: 0;\n}\n", ""]);
+exports.push([module.i, "\n.h2[data-v-4d7c4b1e]{\n  font-size: 0.66667rem;\n  text-align: center;\n  height: 1.46667rem;\n  line-height: 1.46667rem;\n}\n.grid-3[data-v-4d7c4b1e]{ \n  padding-top: 0.26667rem;\n  flex-direction:row;\n}\n.grid-item[data-v-4d7c4b1e]{\n  text-align:center;\n  width: 3.33333rem;\n  height: 3.33333rem;\n  line-height: 3.33333rem;\n  font-size:1.33333rem;\n  background-color:#000;\n  color:#ffffff;\n  /* wx作为单位 */\n  border-right-width: 0.02667rem;\n  border-right-style: solid;\n  border-right-color: #fff;\n}\n.grid-3-equal[data-v-4d7c4b1e]{\n  justify-content: space-between;\n}\n.last[data-v-4d7c4b1e]{\n  border-right-width: 0;\n}\n", ""]);
 
 // exports
 

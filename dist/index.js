@@ -62,478 +62,26 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 53);
+/******/ 	return __webpack_require__(__webpack_require__.s = 293);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 10:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(1)
+__vue_styles__.push(__webpack_require__(11)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(2)
+__vue_exports__ = __webpack_require__(12)
 
 /* template */
-var __vue_template__ = __webpack_require__(3)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/slider.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-6bb6c69c"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = {
-  "ui-list": {
-    "width": "750",
-    "position": "absolute",
-    "top": "0",
-    "bottom": "0",
-    "left": "0",
-    "right": "0"
-  },
-  "ui-list-cell": {
-    "width": "750"
-  },
-  "ui-list-inner": {
-    "display": "flex",
-    "borderBottomWidth": "1",
-    "borderBottomColor": "#E9E9E9",
-    "borderBottomStyle": "solid",
-    "marginLeft": "86",
-    "position": "relative",
-    "paddingTop": "30",
-    "paddingBottom": "30",
-    "flexDirection": "row",
-    "height": "180",
-    "//marginLeft": "106"
-  },
-  "ui-list-thumb": {
-    "width": "120",
-    "height": "120",
-    "marginRight": "20"
-  },
-  "ui-list-img": {
-    "width": "120",
-    "height": "120"
-  },
-  "ui-thumb-img": {
-    "width": "120",
-    "height": "120"
-  },
-  "ui-list-info": {
-    "display": "flex",
-    "justifyContent": "center",
-    "flex": 1,
-    "paddingRight": "168"
-  },
-  "info-h3": {
-    "color": "#000000",
-    "fontSize": "32",
-    "lines": 1,
-    "textOverflow": "ellipsis"
-  },
-  "info-p": {
-    "color": "#888899",
-    "fontSize": "24"
-  },
-  "ui-btn": {
-    "position": "absolute",
-    "right": 0,
-    "top": "0",
-    "width": "128",
-    "height": "60",
-    "borderRadius": "60",
-    "borderWidth": "2",
-    "borderColor": "#888899",
-    "justifyContent": "center",
-    "color": "#888899",
-    "background": "transparent",
-    "opacity": 1,
-    "outline:focus": "none",
-    "opacity:active": 0.5
-  },
-  "ui-btn-text": {
-    "fontSize": "24",
-    "textAlign": "center"
-  },
-  "ui-btn-primary": {
-    "borderWidth": 0,
-    "backgroundImage": "linear-gradient(to right,#FFD980,#E6BC5C)"
-  },
-  "ui-btn-progress": {
-    "position": "absolute",
-    "backgroundImage": "none",
-    "backgroundColor": "#FFD980",
-    "overflow": "hidden",
-    "paddingLeft": "2",
-    "paddingRight": "2",
-    "paddingTop": "2",
-    "paddingBottom": "2",
-    "alignItems": "center",
-    "zIndex": 2
-  },
-  "btn-progress-inner": {
-    "backgroundColor": "#ffffff",
-    "position": "absolute",
-    "left": "2",
-    "top": "2",
-    "right": "2",
-    "height": "56",
-    "borderRadius": "60"
-  },
-  "btn-progress-bar": {
-    "position": "absolute",
-    "left": 0,
-    "top": 0,
-    "height": "60",
-    "width": 50,
-    "backgroundImage": "linear-gradient(to right,#FFD980,#E6BC5C)",
-    "//borderTopLeftRadius": "60",
-    "//borderBottomLeftRadius": "60"
-  },
-  "btn-progress-text": {
-    "position": "relative",
-    "zIndex": 1,
-    "color": "#000000"
-  },
-  "star-wrap": {
-    "flexDirection": "row",
-    "alignItems": "center"
-  },
-  "star": {
-    "width": "20",
-    "height": "19",
-    "marginRight": "3"
-  },
-  "scroe-text": {
-    "fontSize": "24",
-    "color": "#E6B035",
-    "marginLeft": "10"
-  },
-  "slider": {
-    "position": "absolute",
-    "top": "188",
-    "bottom": "0",
-    "width": "750"
-  },
-  "list-rank": {
-    "width": "86",
-    "height": "38",
-    "position": "absolute",
-    "left": "0",
-    "top": "70",
-    "alignItems": "center"
-  },
-  "list-rank-num": {
-    "width": "60",
-    "fontSize": "32",
-    "textAlign": "center"
-  },
-  "rank-icon": {
-    "position": "absolute",
-    "width": "30",
-    "height": "30",
-    "left": "60",
-    "top": "4"
-  },
-  "empty-cell": {
-    "width": "750",
-    "position": "absolute",
-    "top": "0",
-    "bottom": "88",
-    "left": "0",
-    "right": "0",
-    "zIndex": 9999,
-    "alignItems": "center",
-    "justifyContent": "center"
-  },
-  "btn-position": {
-    "position": "absolute",
-    "right": "30",
-    "top": "60",
-    "width": "128",
-    "height": "64"
-  },
-  "wait": {
-    "position": "absolute",
-    "right": "30",
-    "top": "60",
-    "width": "128",
-    "height": "60",
-    "justifyContent": "center",
-    "alignItems": "center"
-  },
-  "wait-text": {
-    "fontSize": "28",
-    "color": "#b2b2b2"
-  }
-}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var platform = weex.config.env.platform;
-
-var isWeb = (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && platform.toLowerCase() === 'web';
-var bbc = new BroadcastChannel('game-list');
-exports.default = {
-    components: {},
-    data: function data() {
-        return {
-            avatarUrl: 'http://placeholder.qiniudn.com/100x100',
-            photoUrl: 'http://placeholder.qiniudn.com/750x422',
-            linkImg: {
-                up: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/up.png',
-                down: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/down.png',
-                hold: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/hold.png',
-                stared: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/stared.png',
-                star: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/star.png',
-                placeholderImg: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/game.png'
-            },
-            isDownload: false,
-            btnProgress: 0,
-            btnProgressText: this.isDownload ? '0%' : '下载'
-        };
-    },
-
-
-    computed: {
-        downloadBtnClass: function downloadBtnClass() {
-            return this.isDownload ? ['ui-btn', 'ui-btn-primary', 'ui-btn-progress'] : ['ui-btn'];
-        },
-        downloadBtnTextClass: function downloadBtnTextClass() {
-            return this.isDownload ? ['ui-btn-text', 'btn-progress-text'] : ['ui-btn-text'];
-        },
-        positionStyle: function positionStyle() {
-            return weex.config.env.platform == 'android' ? 'absolute' : 'fixed';
-        }
-    },
-    methods: {
-        sliderChanged: function sliderChanged(e) {
-            bbc.postMessage({ currentPage: e.index });
-        },
-        downloadGame: function downloadGame() {
-            var self = this;
-            var btnWidth = isWeb ? 68 : 136;
-            self.isDownload = true;
-            self.btnProgressText = self.isDownload ? '0%' : '下载';
-            var run = setInterval(function () {
-                self.btnProgress += 4;
-                self.btnProgressText = parseInt(self.btnProgress / btnWidth * 100) + '%';
-                if (self.btnProgress == btnWidth) {
-                    self.btnProgress = 0;
-                    self.isDownload = false;
-                    self.btnProgressText = '下载';
-                    clearInterval(run);
-                }
-            }, 50);
-        }
-    }
-};
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('slider', {
-    staticClass: ["slider"],
-    on: {
-      "change": _vm.sliderChanged
-    }
-  }, _vm._l((7), function(v, i) {
-    return _c('list', {
-      staticClass: ["ui-list"]
-    }, _vm._l((16), function(item, index) {
-      return _c('cell', {
-        staticClass: ["ui-list-cell"],
-        appendAsTree: true,
-        attrs: {
-          "append": "tree"
-        }
-      }, [_c('div', {
-        staticClass: ["list-rank"]
-      }, [_c('text', {
-        staticClass: ["list-rank-num"]
-      }, [_vm._v(_vm._s(1 + index))]), (false) ? _c('div', [(index == 0) ? _c('image', {
-        staticClass: ["rank-icon", "rank-up"],
-        attrs: {
-          "src": _vm.linkImg.up
-        }
-      }) : _vm._e(), (index == 1) ? _c('image', {
-        staticClass: ["rank-icon", "rank-down"],
-        attrs: {
-          "src": _vm.linkImg.down
-        }
-      }) : _vm._e(), (index > 1) ? _c('image', {
-        staticClass: ["rank-icon", "rank-hold"],
-        attrs: {
-          "src": _vm.linkImg.hold
-        }
-      }) : _vm._e()]) : _vm._e()]), _c('div', {
-        staticClass: ["ui-list-inner"]
-      }, [_c('div', {
-        staticClass: ["ui-list-thumb"]
-      }, [_c('image', {
-        staticClass: ["ui-list-img"],
-        attrs: {
-          "src": _vm.linkImg.placeholderImg
-        }
-      })]), _c('div', {
-        staticClass: ["ui-list-info"]
-      }, [_c('text', {
-        staticClass: ["info-h3"]
-      }, [_vm._v("全民飞机全民飞机全民飞机全民飞机全民飞机")]), _c('div', {
-        staticClass: ["star-wrap"]
-      }, [_vm._l((4), function(s, j) {
-        return _c('image', {
-          staticClass: ["star"],
-          attrs: {
-            "src": _vm.linkImg.stared
-          }
-        })
-      }), _c('image', {
-        staticClass: ["star"],
-        attrs: {
-          "src": _vm.linkImg.star
-        }
-      }), _c('text', {
-        staticClass: ["scroe-text"]
-      }, [_vm._v("9.2分")])], 2), _c('text', {
-        staticClass: ["info-p"]
-      }, [_vm._v("293881人已安装")])]), (index == 3) ? _c('div', {
-        staticClass: ["wait"]
-      }, [_c('text', {
-        staticClass: ["wait-text"]
-      }, [_vm._v("敬请期待")])]) : _c('div', {
-        staticClass: ["btn-position"]
-      }, [(index != 2) ? _c('div', {
-        staticClass: ["ui-btn"]
-      }, [_c('text', {
-        staticClass: ["ui-btn-text"]
-      }, [_vm._v("下载")])]) : _vm._e(), (index === 2) ? _c('div', {
-        class: _vm.downloadBtnClass,
-        on: {
-          "click": _vm.downloadGame
-        }
-      }, [(_vm.isDownload) ? _c('div', {
-        staticClass: ["btn-progress-inner"]
-      }) : _vm._e(), (_vm.isDownload) ? _c('div', {
-        staticClass: ["btn-progress-bar"],
-        style: {
-          width: _vm.btnProgress + 'px'
-        }
-      }) : _vm._e(), _c('text', {
-        class: _vm.downloadBtnTextClass
-      }, [_vm._v(_vm._s(_vm.btnProgressText))])]) : _vm._e()])])])
-    }))
-  }))
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(5)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(6)
-
-/* template */
-var __vue_template__ = __webpack_require__(7)
+var __vue_template__ = __webpack_require__(13)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -563,7 +111,8 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 5 */
+
+/***/ 11:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -619,7 +168,8 @@ module.exports = {
 }
 
 /***/ }),
-/* 6 */
+
+/***/ 12:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -665,7 +215,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 7 */
+
+/***/ 13:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -700,21 +251,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 8 */
+
+/***/ 22:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(9)
+__vue_styles__.push(__webpack_require__(23)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(10)
+__vue_exports__ = __webpack_require__(24)
 
 /* template */
-var __vue_template__ = __webpack_require__(11)
+var __vue_template__ = __webpack_require__(25)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -744,7 +296,8 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 9 */
+
+/***/ 23:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -828,7 +381,8 @@ module.exports = {
 }
 
 /***/ }),
-/* 10 */
+
+/***/ 24:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -899,7 +453,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 11 */
+
+/***/ 25:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -993,21 +548,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 12 */
+
+/***/ 26:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(13)
+__vue_styles__.push(__webpack_require__(27)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(14)
+__vue_exports__ = __webpack_require__(28)
 
 /* template */
-var __vue_template__ = __webpack_require__(15)
+var __vue_template__ = __webpack_require__(29)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -1037,7 +593,8 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 13 */
+
+/***/ 27:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -1104,13 +661,14 @@ module.exports = {
     "color": "#ffffff"
   },
   "grid-item-image": {
-    "width": 100,
-    "height": 100
+    "width": "247",
+    "height": "247"
   }
 }
 
 /***/ }),
-/* 14 */
+
+/***/ 28:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1213,7 +771,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 15 */
+
+/***/ 29:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1329,21 +888,538 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 16 */
+
+/***/ 290:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_c('text', {
+    staticClass: ["h2"]
+  }, [_vm._v("BindingX 手势动画")]), _c('div', {
+    ref: 'card',
+    staticClass: ["card"],
+    on: {
+      "touchstart": _vm.ontouchstart
+    }
+  }, [_c('text', {
+    staticClass: ["card-text"]
+  }, [_vm._v("卡片 with 回弹")])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 293:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _index = __webpack_require__(294);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_index2.default.el = '#root';
+new Vue(_index2.default);
+
+/***/ }),
+
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(17)
+__vue_styles__.push(__webpack_require__(295)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(18)
+__vue_exports__ = __webpack_require__(296)
 
 /* template */
-var __vue_template__ = __webpack_require__(19)
+var __vue_template__ = __webpack_require__(297)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/index.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-15213bb9"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 295:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "wrapper": {
+    "position": "absolute",
+    "top": 0,
+    "bottom": 0,
+    "width": "750",
+    "paddingBottom": "50"
+  },
+  "header-bar": {
+    "top": "-40",
+    "left": 0,
+    "paddingTop": "30",
+    "height": "140",
+    "backgroundColor": "#ff9300",
+    "position": "fixed",
+    "zIndex": 9999
+  },
+  "header-bar-placeholder": {
+    "height": "140"
+  },
+  "back-btn": {
+    "position": "absolute",
+    "left": 0,
+    "top": "30",
+    "height": "110",
+    "width": "210",
+    "paddingLeft": "20"
+  },
+  "back-btn-txt": {
+    "height": "110",
+    "lineHeight": "110",
+    "color": "#ffffff",
+    "fontSize": "40"
+  },
+  "title": {
+    "width": "750",
+    "height": "110",
+    "lineHeight": "110",
+    "color": "#ffffff",
+    "fontSize": "40",
+    "textAlign": "center"
+  },
+  "h1": {
+    "fontSize": "48",
+    "paddingLeft": "24",
+    "height": "180",
+    "fontWeight": "bold",
+    "textAlign": "center",
+    "lineHeight": "180",
+    "backgroundColor": "#ffffff",
+    "borderBottomWidth": "1",
+    "borderBottomStyle": "solid",
+    "borderBottomColor": "#aaaaaa"
+  },
+  "link-list": {
+    "paddingLeft": "50",
+    "borderBottomWidth": "1",
+    "borderBottomStyle": "solid",
+    "borderBottomColor": "#aaaaaa"
+  },
+  "link": {
+    "fontSize": "48",
+    "height": "120",
+    "lineHeight": "120",
+    "borderBottomWidth": "1",
+    "borderBottomStyle": "solid",
+    "borderBottomColor": "#aaaaaa",
+    "position": "relative"
+  },
+  "last": {
+    "borderBottomWidth": "0"
+  },
+  "icon-arrow": {
+    "color": "#aaaaaa",
+    "position": "absolute",
+    "right": "30",
+    "top": "40",
+    "fontFamily": "iconfont"
+  },
+  "grid-3": {
+    "marginLeft": "-4",
+    "backgroundColor": "#FF0000"
+  },
+  "grid-item": {
+    "backgroundColor": "#FF0000",
+    "marginLeft": "4",
+    "width": "247",
+    "height": "247",
+    "position": "relative"
+  },
+  "grid-image": {
+    "position": "absolute",
+    "width": "247",
+    "height": "247",
+    "top": 0,
+    "left": 0
+  },
+  "image": {
+    "width": "700",
+    "height": "700"
+  },
+  "slider": {
+    "marginTop": "25",
+    "marginLeft": "25",
+    "width": "700",
+    "height": "700",
+    "borderWidth": "2",
+    "borderStyle": "solid",
+    "borderColor": "#41B883"
+  },
+  "frame": {
+    "width": "700",
+    "height": "700",
+    "position": "relative"
+  }
+}
+
+/***/ }),
+
+/***/ 296:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _demo12A = __webpack_require__(22);
+
+var _demo12A2 = _interopRequireDefault(_demo12A);
+
+var _demo12B = __webpack_require__(26);
+
+var _demo12B2 = _interopRequireDefault(_demo12B);
+
+var _demo12C = __webpack_require__(30);
+
+var _demo12C2 = _interopRequireDefault(_demo12C);
+
+var _demo13A = __webpack_require__(34);
+
+var _demo13A2 = _interopRequireDefault(_demo13A);
+
+var _demo13B = __webpack_require__(38);
+
+var _demo13B2 = _interopRequireDefault(_demo13B);
+
+var _demo = __webpack_require__(42);
+
+var _demo2 = _interopRequireDefault(_demo);
+
+var _demo3 = __webpack_require__(46);
+
+var _demo4 = _interopRequireDefault(_demo3);
+
+var _demo5 = __webpack_require__(50);
+
+var _demo6 = _interopRequireDefault(_demo5);
+
+var _demo7 = __webpack_require__(54);
+
+var _demo8 = _interopRequireDefault(_demo7);
+
+var _demo9 = __webpack_require__(59);
+
+var _demo10 = _interopRequireDefault(_demo9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var navigator = weex.requireModule('navigator');
+exports.default = {
+  name: 'App',
+  components: {
+    Demo12A: _demo12A2.default, Demo12B: _demo12B2.default, Demo12C: _demo12C2.default, Demo13A: _demo13A2.default, Demo13B: _demo13B2.default, Demo14: _demo2.default, Demo21: _demo4.default, Demo22: _demo6.default, Demo23: _demo8.default, Demo24: _demo10.default
+  },
+  data: function data() {
+    return {
+      currentPage: 'index'
+    };
+  },
+  mounted: function mounted() {},
+  created: function created() {
+    var domModule = weex.requireModule("dom");
+    domModule.addRule('fontFace', {
+      'fontFamily': 'iconfont', //注意这里必须是驼峰命名，跟上面的css样式对照
+      'src': "url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"
+    });
+  },
+
+  methods: {
+    switchPage: function switchPage(page) {
+      this.currentPage = page;
+    }
+  }
+};
+
+/***/ }),
+
+/***/ 297:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_c('div', {
+    staticClass: ["header-bar"]
+  }, [_c('text', {
+    staticClass: ["title"]
+  }, [_vm._v("Demo")]), (_vm.currentPage != 'index') ? _c('div', {
+    staticClass: ["back-btn"],
+    on: {
+      "click": function($event) {
+        _vm.switchPage('index')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["back-btn-txt"]
+  }, [_vm._v(" < 返回")])]) : _vm._e()]), _c('div', {
+    staticClass: ["header-bar-placeholder"]
+  }), (_vm.currentPage == 'index') ? _c('scroller', {
+    staticClass: ["scroller"]
+  }, [_c('text', {
+    staticClass: ["h1"]
+  }, [_vm._v("与Web开发的差异")]), _c('div', {
+    staticClass: ["link-list"]
+  }, [_c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo12A')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link"]
+  }, [_vm._v("Flex布局")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])]), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo12B')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link"]
+  }, [_vm._v("图片 & icon")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])]), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo12C')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link"]
+  }, [_vm._v("定位")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])]), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo13A')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link"]
+  }, [_vm._v("生命周期")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])]), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo13B')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link"]
+  }, [_vm._v("组件嵌套 & 私有样式")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])]), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo14')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link", "last"]
+  }, [_vm._v("完整案例")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])])]), _c('text', {
+    staticClass: ["h1"]
+  }, [_vm._v("进阶")]), _c('div', {
+    staticClass: ["link-list"]
+  }, [_c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo21')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link"]
+  }, [_vm._v("高精度还原UI")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])]), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo22')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link"]
+  }, [_vm._v("基础动画")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])]), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo23')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link"]
+  }, [_vm._v("高性能交互动画")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])]), _c('div', {
+    on: {
+      "click": function($event) {
+        _vm.switchPage('demo24')
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["link", "last"]
+  }, [_vm._v("BindingX 差值器")]), _c('text', {
+    staticClass: ["icon-arrow"]
+  }, [_vm._v("")])])])]) : _vm._e(), (_vm.currentPage == 'demo12A') ? _c('Demo12A', {
+    ref: "demo12A"
+  }) : _vm._e(), (_vm.currentPage == 'demo12B') ? _c('Demo12B', {
+    ref: "demo12B"
+  }) : _vm._e(), (_vm.currentPage == 'demo12C') ? _c('Demo12C', {
+    ref: "demo12C"
+  }) : _vm._e(), (_vm.currentPage == 'demo13A') ? _c('Demo13A', {
+    ref: "demo13A"
+  }) : _vm._e(), (_vm.currentPage == 'demo13B') ? _c('Demo13B', {
+    ref: "demo13B"
+  }) : _vm._e(), (_vm.currentPage == 'demo14') ? _c('Demo14', {
+    ref: "demo14"
+  }) : _vm._e(), (_vm.currentPage == 'demo21') ? _c('Demo21', {
+    ref: "demo21"
+  }) : _vm._e(), (_vm.currentPage == 'demo22') ? _c('Demo22', {
+    ref: "demo22"
+  }) : _vm._e(), (_vm.currentPage == 'demo23') ? _c('Demo23', {
+    ref: "demo23"
+  }) : _vm._e(), (_vm.currentPage == 'demo24') ? _c('Demo24', {
+    ref: "demo24"
+  }) : _vm._e()], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 30:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(31)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(32)
+
+/* template */
+var __vue_template__ = __webpack_require__(33)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -1373,7 +1449,8 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 17 */
+
+/***/ 31:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -1398,17 +1475,20 @@ module.exports = {
   "a": {
     "left": "10",
     "top": "10",
-    "backgroundColor": "#ff9300"
+    "backgroundColor": "#ff9300",
+    "zIndex": 3
   },
   "b": {
     "left": "160",
     "top": "160",
+    "zIndex": 2,
     "backgroundColor": "#e60012"
   },
   "c": {
     "left": "310",
     "top": "310",
-    "backgroundColor": "#00a0e9"
+    "backgroundColor": "#00a0e9",
+    "zIndex": 1
   },
   "t": {
     "fontSize": "50",
@@ -1420,7 +1500,8 @@ module.exports = {
 }
 
 /***/ }),
-/* 18 */
+
+/***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1461,7 +1542,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 19 */
+
+/***/ 33:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1490,21 +1572,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 20 */
+
+/***/ 34:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(21)
+__vue_styles__.push(__webpack_require__(35)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(22)
+__vue_exports__ = __webpack_require__(36)
 
 /* template */
-var __vue_template__ = __webpack_require__(23)
+var __vue_template__ = __webpack_require__(37)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -1534,7 +1617,8 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 21 */
+
+/***/ 35:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -1572,7 +1656,8 @@ module.exports = {
 }
 
 /***/ }),
-/* 22 */
+
+/***/ 36:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1680,7 +1765,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 23 */
+
+/***/ 37:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1765,21 +1851,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 24 */
+
+/***/ 38:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(25)
+__vue_styles__.push(__webpack_require__(39)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(26)
+__vue_exports__ = __webpack_require__(40)
 
 /* template */
-var __vue_template__ = __webpack_require__(27)
+var __vue_template__ = __webpack_require__(41)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -1809,7 +1896,8 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 25 */
+
+/***/ 39:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -1846,7 +1934,8 @@ module.exports = {
 }
 
 /***/ }),
-/* 26 */
+
+/***/ 40:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1882,7 +1971,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 27 */
+
+/***/ 41:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1913,21 +2003,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 28 */
+
+/***/ 42:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(29)
+__vue_styles__.push(__webpack_require__(43)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(30)
+__vue_exports__ = __webpack_require__(44)
 
 /* template */
-var __vue_template__ = __webpack_require__(31)
+var __vue_template__ = __webpack_require__(45)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -1957,7 +2048,8 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 29 */
+
+/***/ 43:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -1971,7 +2063,8 @@ module.exports = {
 }
 
 /***/ }),
-/* 30 */
+
+/***/ 44:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1981,11 +2074,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _slider = __webpack_require__(0);
+var _slider = __webpack_require__(6);
 
 var _slider2 = _interopRequireDefault(_slider);
 
-var _tab = __webpack_require__(4);
+var _tab = __webpack_require__(10);
 
 var _tab2 = _interopRequireDefault(_tab);
 
@@ -2015,7 +2108,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 31 */
+
+/***/ 45:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2026,21 +2120,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 32 */
+
+/***/ 46:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(33)
+__vue_styles__.push(__webpack_require__(47)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(34)
+__vue_exports__ = __webpack_require__(48)
 
 /* template */
-var __vue_template__ = __webpack_require__(35)
+var __vue_template__ = __webpack_require__(49)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2070,7 +2165,8 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 33 */
+
+/***/ 47:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -2105,7 +2201,8 @@ module.exports = {
 }
 
 /***/ }),
-/* 34 */
+
+/***/ 48:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2138,7 +2235,8 @@ exports.default = {
 };
 
 /***/ }),
-/* 35 */
+
+/***/ 49:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2161,21 +2259,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 36 */
+
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(37)
+__vue_styles__.push(__webpack_require__(51)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(38)
+__vue_exports__ = __webpack_require__(52)
 
 /* template */
-var __vue_template__ = __webpack_require__(39)
+var __vue_template__ = __webpack_require__(53)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2205,13 +2304,11 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 37 */
+
+/***/ 51:
 /***/ (function(module, exports) {
 
 module.exports = {
-  "iconfont-http": {
-    "fontFamily": "iconfont-http"
-  },
   "btn": {
     "width": "300",
     "height": "120",
@@ -2271,7 +2368,8 @@ module.exports = {
 }
 
 /***/ }),
-/* 38 */
+
+/***/ 52:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2321,7 +2419,6 @@ exports.default = {
       this.animating = true;
     },
     doJsAnimation: function doJsAnimation() {
-      modal.toast({ message: '动画开始' });
       var juhua = this.$refs.juhua;
       animation.transition(juhua, {
         styles: {
@@ -2331,15 +2428,14 @@ exports.default = {
         timingFunction: 'ease',
         needLayout: false,
         delay: 0 //ms
-      }, function () {
-        modal.toast({ message: '动画结束' });
-      });
+      }, function () {});
     }
   }
 };
 
 /***/ }),
-/* 39 */
+
+/***/ 53:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2384,21 +2480,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 40 */
+
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(41)
+__vue_styles__.push(__webpack_require__(55)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(42)
+__vue_exports__ = __webpack_require__(56)
 
 /* template */
-var __vue_template__ = __webpack_require__(44)
+var __vue_template__ = __webpack_require__(58)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2428,407 +2525,94 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 41 */
+
+/***/ 55:
 /***/ (function(module, exports) {
 
 module.exports = {
-  "container": {
-    "flex": 1,
-    "backgroundColor": "#eeeeee"
+  "h2": {
+    "marginTop": "30",
+    "fontSize": "50",
+    "textAlign": "center",
+    "height": "110",
+    "lineHeight": "110"
   },
-  "border": {
-    "height": 1000,
-    "paddingLeft": 35,
-    "paddingRight": 35,
-    "paddingTop": 100
+  "card": {
+    "top": "300",
+    "position": "absolute",
+    "left": "75",
+    "width": "600",
+    "height": "480",
+    "backgroundColor": "#000000",
+    "borderRadius": "8"
   },
-  "box": {
-    "width": 680,
-    "height": 450,
-    "backgroundColor": "#651FFF"
-  },
-  "head": {
-    "backgroundColor": "#651FFF",
-    "width": 680,
-    "height": 120,
-    "flexDirection": "row",
-    "alignItems": "center"
-  },
-  "content": {
-    "width": 680,
-    "height": 240,
-    "backgroundColor": "#651FFF",
-    "paddingLeft": 24,
-    "paddingTop": 24,
-    "paddingRight": 24,
-    "boxSizing": "border-box"
-  },
-  "footer": {
-    "width": 680,
-    "height": 90,
-    "backgroundColor": "#ffffff",
-    "alignItems": "center",
-    "justifyContent": "flex-end",
-    "paddingRight": 25,
-    "flexDirection": "row",
-    "boxSizing": "border-box"
-  },
-  "action": {
-    "fontSize": 35,
-    "paddingRight": 20
-  },
-  "desc": {
-    "fontSize": 32,
+  "card-text": {
+    "height": "600",
+    "lineHeight": "480",
     "color": "#ffffff",
-    "paddingLeft": 24
-  },
-  "avatar": {
-    "width": 96,
-    "height": 96,
-    "borderRadius": 48,
-    "backgroundColor": "#CDDC39",
-    "marginLeft": 36,
-    "marginRight": 48
-  },
-  "username": {
-    "color": "#ffffff",
-    "fontSize": 32
+    "fontSize": "60",
+    "textAlign": "center"
   }
 }
 
 /***/ }),
-/* 42 */
+
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _weexBindingx = __webpack_require__(43);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-var _weexBindingx2 = _interopRequireDefault(_weexBindingx);
+var modal = weex.requireModule('modal');
+var bindingx = __webpack_require__(57);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = {
-  data: {
-    x: 0,
-    y: 0,
-    isInAnimation: false,
-    gesToken: 0,
-    opacity: 1
+exports.default = {
+  name: 'App',
+  components: {},
+  data: function data() {
+    return {};
   },
+  mounted: function mounted() {},
+
   methods: {
-
-    getEl: function getEl(e) {
-      return e.ref;
-    },
-    touchStart: function touchStart(e) {
-      var self = this;
-      if (this.isInAnimation === true) {
-        console.log('we are in animation, drop pan gesture...');
-        if (this.gesToken) {
-          _weexBindingx2.default.unbind({
-            eventType: 'pan',
-            token: self.gesToken
-          });
-          this.gesToken = undefined;
-        }
-        return;
-      }
-
-      var my = this.getEl(this.$refs.my);
-      var translate_x_origin = 'x+0';
-
-      var opacity_x_origin = '1-abs(x)/600';
-      console.log(my);
-      var gesTokenObj = _weexBindingx2.default.bind({
-        anchor: my,
+    ontouchstart: function ontouchstart() {
+      var el = this.$refs.card.ref;
+      var result = bindingx.bind({
         eventType: 'pan',
+        anchor: el,
         props: [{
-          element: my,
+          element: el,
           property: 'transform.translateX',
-          expression: translate_x_origin
-        }, {
-          element: my,
-          property: 'opacity',
-          expression: opacity_x_origin
-        }]
-      }, function (e) {
-        if (e.state === 'end') {
-          self.x += e.deltaX;
-          self.y += e.deltaY;
-          self.opacity = 1 - Math.abs(e.deltaX) / 600;
-
-          // anim
-          self.bindTiming();
-        }
-      });
-
-      self.gesToken = gesTokenObj.token;
-    },
-    bindTiming: function bindTiming() {
-      this.isInAnimation = true;
-
-      var my = this.getEl(this.$refs.my);
-      var self = this;
-
-      // should equal with timing duration
-      var exit_origin = 't>1000';
-
-      var changed_x;
-      var final_x;
-
-      var final_opacity;
-
-      var translate_x_origin;
-
-      var shouldDismiss = false;
-
-      if (self.x >= -750 / 2 && self.x <= 750 / 2) {
-
-        shouldDismiss = false;
-        final_x = 0;
-        changed_x = 0 - self.x;
-        final_opacity = 1;
-        translate_x_origin = 'easeOutElastic(t,' + self.x + ',' + changed_x + ',1000)';
-      } else if (self.x < -750 / 2) {
-        shouldDismiss = true;
-        final_x = -750;
-        changed_x = -750 - self.x;
-        final_opacity = 0;
-        translate_x_origin = 'easeOutExpo(t,' + self.x + ',' + changed_x + ',1000)';
-      } else {
-        // x > 750/2
-        final_x = 750;
-        shouldDismiss = true;
-        changed_x = 750 - self.x;
-        final_opacity = 0;
-        translate_x_origin = 'easeOutExpo(t,' + self.x + ',' + changed_x + ',1000)';
-      }
-
-      var changed_opacity = final_opacity - self.opacity;
-      var opacity_origin = 'linear(t,' + self.opacity + ',' + changed_opacity + ',1000)';
-
-      var result = _weexBindingx2.default.bind({
-        eventType: 'timing',
-        exitExpression: exit_origin,
-        props: [{
-          element: my,
-          property: 'transform.translateX',
-          expression: translate_x_origin
-        }, {
-          element: my,
-          property: 'opacity',
-          expression: opacity_origin
-        }]
-
-      }, function (e) {
-        if (e.state === 'end' || e.state === 'exit') {
-          // reset x
-          self.x = final_x;
-          self.isInAnimation = false;
-
-          if (shouldDismiss) {
-            // remove card from hierarchy
+          expression: {
+            origin: "x+10"
           }
-        }
-      });
+        }, {
+          element: el,
+          property: 'opacity',
+          expression: '1-abs(x)/600'
+        }]
+      }, function (e) {});
     }
   }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
-/* 43 */
+
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4243,67 +4027,44 @@ var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbo
 });
 
 /***/ }),
-/* 44 */
+
+/***/ 58:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["container"]
-  }, [_c('div', {
-    staticClass: ["border"]
-  }, [_c('div', {
-    ref: "my",
-    staticClass: ["box"],
+    staticClass: ["wrapper"]
+  }, [_c('text', {
+    staticClass: ["h2"]
+  }, [_vm._v("BindingX 手势动画")]), _c('div', {
+    ref: 'card',
+    staticClass: ["card"],
     on: {
-      "touchstart": _vm.touchStart
-    }
-  }, [_vm._m(0), _vm._m(1), _vm._m(2)])]), _vm._m(3)])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["head"]
-  }, [_c('div', {
-    staticClass: ["avatar"]
-  }), _c('text', {
-    staticClass: ["username"]
-  }, [_vm._v("HACKER")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["content"]
-  }, [_c('text', {
-    staticClass: ["desc"]
-  }, [_vm._v("Google announced a new version of Nearby Connections for fully offline.high\n                bandwidth peer to peer device communications.")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["footer"]
-  }, [_c('text', {
-    staticClass: ["action"]
-  }, [_vm._v("SHARE")]), _c('text', {
-    staticClass: ["action"],
-    staticStyle: {
-      color: "#7C4DFF"
-    }
-  }, [_vm._v("EXPLORE")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticStyle: {
-      width: "750",
-      alignItems: "center",
-      justifyContent: "center"
+      "touchstart": _vm.ontouchstart
     }
   }, [_c('text', {
-    staticStyle: {
-      fontSize: "40"
-    }
-  }, [_vm._v("Swipeable Card")])])
-}]}
+    staticClass: ["card-text"]
+  }, [_vm._v("卡片")])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 45 */
-/***/ (function(module, exports) {
+
+/***/ 59:
+/***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(60)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(61)
+
+/* template */
+var __vue_template__ = __webpack_require__(290)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -4316,6 +4077,9 @@ if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
 __vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/page/demo2-4.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-5a544c7f"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -4330,44 +4094,22 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-var _index = __webpack_require__(54);
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_index2.default.el = '#root';
-new Vue(_index2.default);
-
-/***/ }),
-/* 54 */
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(55)
+__vue_styles__.push(__webpack_require__(7)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(56)
+__vue_exports__ = __webpack_require__(8)
 
 /* template */
-var __vue_template__ = __webpack_require__(57)
+var __vue_template__ = __webpack_require__(9)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -4379,10 +4121,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/index.vue"
+__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/component/slider.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-15213bb9"
+__vue_options__._scopeId = "data-v-6bb6c69c"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -4397,128 +4139,39 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 55 */
+
+/***/ 60:
 /***/ (function(module, exports) {
 
 module.exports = {
-  "wrapper": {
-    "position": "absolute",
-    "top": 0,
-    "bottom": 0,
-    "width": "750",
-    "paddingBottom": "50"
-  },
-  "header-bar": {
-    "top": "-40",
-    "left": 0,
-    "paddingTop": "30",
-    "height": "140",
-    "backgroundColor": "#ff9300",
-    "position": "fixed",
-    "zIndex": 9999
-  },
-  "header-bar-placeholder": {
-    "height": "140"
-  },
-  "back-btn": {
-    "position": "absolute",
-    "left": 0,
-    "top": "30",
-    "height": "110",
-    "width": "210",
-    "paddingLeft": "20"
-  },
-  "back-btn-txt": {
-    "height": "110",
-    "lineHeight": "110",
-    "color": "#ffffff",
-    "fontSize": "40"
-  },
-  "title": {
-    "width": "750",
-    "height": "110",
-    "lineHeight": "110",
-    "color": "#ffffff",
-    "fontSize": "40",
-    "textAlign": "center"
-  },
-  "h1": {
-    "fontSize": "48",
-    "paddingLeft": "24",
-    "height": "180",
-    "fontWeight": "bold",
+  "h2": {
+    "marginTop": "30",
+    "fontSize": "50",
     "textAlign": "center",
-    "lineHeight": "180",
-    "backgroundColor": "#ffffff",
-    "borderBottomWidth": "1",
-    "borderBottomStyle": "solid",
-    "borderBottomColor": "#aaaaaa"
+    "height": "110",
+    "lineHeight": "110"
   },
-  "link-list": {
-    "paddingLeft": "50",
-    "borderBottomWidth": "1",
-    "borderBottomStyle": "solid",
-    "borderBottomColor": "#aaaaaa"
-  },
-  "link": {
-    "fontSize": "48",
-    "height": "120",
-    "lineHeight": "120",
-    "borderBottomWidth": "1",
-    "borderBottomStyle": "solid",
-    "borderBottomColor": "#aaaaaa",
-    "position": "relative"
-  },
-  "last": {
-    "borderBottomWidth": "0"
-  },
-  "icon-arrow": {
-    "color": "#aaaaaa",
+  "card": {
+    "top": "300",
     "position": "absolute",
-    "right": "30",
-    "top": "40",
-    "fontFamily": "iconfont"
+    "left": "75",
+    "width": "600",
+    "height": "480",
+    "backgroundColor": "#000000",
+    "borderRadius": "8"
   },
-  "grid-3": {
-    "marginLeft": "-4",
-    "backgroundColor": "#FF0000"
-  },
-  "grid-item": {
-    "backgroundColor": "#FF0000",
-    "marginLeft": "4",
-    "width": "247",
-    "height": "247",
-    "position": "relative"
-  },
-  "grid-image": {
-    "position": "absolute",
-    "width": "247",
-    "height": "247",
-    "top": 0,
-    "left": 0
-  },
-  "image": {
-    "width": "700",
-    "height": "700"
-  },
-  "slider": {
-    "marginTop": "25",
-    "marginLeft": "25",
-    "width": "700",
-    "height": "700",
-    "borderWidth": "2",
-    "borderStyle": "solid",
-    "borderColor": "#41B883"
-  },
-  "frame": {
-    "width": "700",
-    "height": "700",
-    "position": "relative"
+  "card-text": {
+    "height": "600",
+    "lineHeight": "480",
+    "color": "#ffffff",
+    "fontSize": "60",
+    "textAlign": "center"
   }
 }
 
 /***/ }),
-/* 56 */
+
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4527,106 +4180,6 @@ module.exports = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _demo12A = __webpack_require__(8);
-
-var _demo12A2 = _interopRequireDefault(_demo12A);
-
-var _demo12B = __webpack_require__(12);
-
-var _demo12B2 = _interopRequireDefault(_demo12B);
-
-var _demo12C = __webpack_require__(16);
-
-var _demo12C2 = _interopRequireDefault(_demo12C);
-
-var _demo13A = __webpack_require__(20);
-
-var _demo13A2 = _interopRequireDefault(_demo13A);
-
-var _demo13B = __webpack_require__(24);
-
-var _demo13B2 = _interopRequireDefault(_demo13B);
-
-var _demo = __webpack_require__(28);
-
-var _demo2 = _interopRequireDefault(_demo);
-
-var _demo3 = __webpack_require__(32);
-
-var _demo4 = _interopRequireDefault(_demo3);
-
-var _demo5 = __webpack_require__(36);
-
-var _demo6 = _interopRequireDefault(_demo5);
-
-var _demo7 = __webpack_require__(40);
-
-var _demo8 = _interopRequireDefault(_demo7);
-
-var _demo9 = __webpack_require__(45);
-
-var _demo10 = _interopRequireDefault(_demo9);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -4638,178 +4191,524 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
-var navigator = weex.requireModule('navigator');
+var modal = weex.requireModule('modal');
+var bindingx = __webpack_require__(57);
+
+//获取节点 - 兼容web
+var getElment = function getElment(el) {
+  return WXEnvironment.platform == "Web" ? el : el.ref;
+};
 exports.default = {
   name: 'App',
-  components: {
-    Demo12A: _demo12A2.default, Demo12B: _demo12B2.default, Demo12C: _demo12C2.default, Demo13A: _demo13A2.default, Demo13B: _demo13B2.default, Demo14: _demo2.default, Demo21: _demo4.default, Demo22: _demo6.default, Demo23: _demo8.default, Demo24: _demo10.default
-  },
+  components: {},
   data: function data() {
     return {
-      currentPage: 'index'
+      isInAnimation: false
     };
   },
   mounted: function mounted() {},
-  created: function created() {
-    var domModule = weex.requireModule("dom");
-    domModule.addRule('fontFace', {
-      'fontFamily': 'iconfont', //注意这里必须是驼峰命名，跟上面的css样式对照
-      'src': "url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"
-    });
-  },
 
   methods: {
-    switchPage: function switchPage(page) {
-      this.currentPage = page;
+    ontouchstart: function ontouchstart() {
+      var self = this;
+      var el = getElment(this.$refs.card);
+
+      //解决手势冲突
+      if (this.isInAnimation === true) {
+        if (this.gesToken != 0) {
+          bindingx.unbind({
+            eventType: 'pan',
+            token: self.gesToken
+          });
+          this.gesToken = 0;
+        }
+        return;
+      }
+
+      var gesTokenObj = bindingx.bind({
+        eventType: 'pan',
+        anchor: el,
+        props: [{
+          element: el,
+          property: 'transform.translateX',
+          expression: {
+            origin: "x+10"
+          }
+        }, {
+          element: el,
+          property: 'opacity',
+          expression: '1-abs(x)/600'
+        }]
+      }, function (e) {
+        if (e.state === 'end') {
+          self.x = e.deltaX;
+          self.opacity = 1 - Math.abs(e.deltaX) / 600;
+          self.bindTiming();
+        }
+      });
+      this.gesToken = gesTokenObj.token;
+    },
+    bindTiming: function bindTiming() {
+      this.isInAnimation = true;
+      var self = this;
+      var el = getElment(this.$refs.card);
+
+      var changed_x;
+      var final_x;
+
+      var final_opacity;
+      var translate_x_expression;
+      var shouldDismiss = false;
+
+      // if(self.x>=-750/2 && self.x<=750/2) { // 复位      
+      shouldDismiss = false;
+      final_x = 0;
+      changed_x = 0 - self.x;
+      final_opacity = 1;
+
+      //差值器
+      translate_x_expression = "easeOutElastic(t," + self.x + "," + changed_x + ",1000)";
+      // }
+
+      var changed_opacity = final_opacity - self.opacity;
+      var opacity_expression = "linear(t," + self.opacity + "," + changed_opacity + ",1000)";
+      var result = bindingx.bind({
+        eventType: 'timing',
+        exitExpression: "t>1000",
+        props: [{
+          element: el,
+          property: 'transform.translateX',
+          expression: translate_x_expression
+        }, {
+          element: el,
+          property: 'opacity',
+          expression: opacity_expression
+        }]
+      }, function (e) {
+        if (e.state === 'end' || e.state === 'exit') {
+          self.x = final_x;
+          self.isInAnimation = false;
+          if (shouldDismiss) {
+            //删除逻辑
+          }
+        }
+      });
     }
   }
 };
 
 /***/ }),
-/* 57 */
+
+/***/ 7:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "ui-list": {
+    "width": "750",
+    "position": "absolute",
+    "top": "0",
+    "bottom": "0",
+    "left": "0",
+    "right": "0"
+  },
+  "ui-list-cell": {
+    "width": "750"
+  },
+  "ui-list-inner": {
+    "display": "flex",
+    "borderBottomWidth": "1",
+    "borderBottomColor": "#E9E9E9",
+    "borderBottomStyle": "solid",
+    "marginLeft": "86",
+    "position": "relative",
+    "paddingTop": "30",
+    "paddingBottom": "30",
+    "flexDirection": "row",
+    "height": "180",
+    "//marginLeft": "106"
+  },
+  "ui-list-thumb": {
+    "width": "120",
+    "height": "120",
+    "marginRight": "20"
+  },
+  "ui-list-img": {
+    "width": "120",
+    "height": "120"
+  },
+  "ui-thumb-img": {
+    "width": "120",
+    "height": "120"
+  },
+  "ui-list-info": {
+    "display": "flex",
+    "justifyContent": "center",
+    "flex": 1,
+    "paddingRight": "168"
+  },
+  "info-h3": {
+    "color": "#000000",
+    "fontSize": "32",
+    "lines": 1,
+    "textOverflow": "ellipsis"
+  },
+  "info-p": {
+    "color": "#888899",
+    "fontSize": "24"
+  },
+  "ui-btn": {
+    "position": "absolute",
+    "right": 0,
+    "top": "0",
+    "width": "128",
+    "height": "60",
+    "borderRadius": "60",
+    "borderWidth": "2",
+    "borderColor": "#888899",
+    "justifyContent": "center",
+    "color": "#888899",
+    "background": "transparent",
+    "opacity": 1,
+    "outline:focus": "none",
+    "opacity:active": 0.5
+  },
+  "ui-btn-text": {
+    "fontSize": "24",
+    "textAlign": "center"
+  },
+  "ui-btn-primary": {
+    "borderWidth": 0,
+    "backgroundImage": "linear-gradient(to right,#FFD980,#E6BC5C)"
+  },
+  "ui-btn-progress": {
+    "position": "absolute",
+    "backgroundImage": "none",
+    "backgroundColor": "#FFD980",
+    "overflow": "hidden",
+    "paddingLeft": "2",
+    "paddingRight": "2",
+    "paddingTop": "2",
+    "paddingBottom": "2",
+    "alignItems": "center",
+    "zIndex": 2
+  },
+  "btn-progress-inner": {
+    "backgroundColor": "#ffffff",
+    "position": "absolute",
+    "left": "2",
+    "top": "2",
+    "right": "2",
+    "height": "56",
+    "borderRadius": "60"
+  },
+  "btn-progress-bar": {
+    "position": "absolute",
+    "left": 0,
+    "top": 0,
+    "height": "60",
+    "width": 50,
+    "backgroundImage": "linear-gradient(to right,#FFD980,#E6BC5C)",
+    "//borderTopLeftRadius": "60",
+    "//borderBottomLeftRadius": "60"
+  },
+  "btn-progress-text": {
+    "position": "relative",
+    "zIndex": 1,
+    "color": "#000000"
+  },
+  "star-wrap": {
+    "flexDirection": "row",
+    "alignItems": "center"
+  },
+  "star": {
+    "width": "20",
+    "height": "19",
+    "marginRight": "3"
+  },
+  "scroe-text": {
+    "fontSize": "24",
+    "color": "#E6B035",
+    "marginLeft": "10"
+  },
+  "slider": {
+    "position": "absolute",
+    "top": "188",
+    "bottom": "0",
+    "width": "750"
+  },
+  "list-rank": {
+    "width": "86",
+    "height": "38",
+    "position": "absolute",
+    "left": "0",
+    "top": "70",
+    "alignItems": "center"
+  },
+  "list-rank-num": {
+    "width": "60",
+    "fontSize": "32",
+    "textAlign": "center"
+  },
+  "rank-icon": {
+    "position": "absolute",
+    "width": "30",
+    "height": "30",
+    "left": "60",
+    "top": "4"
+  },
+  "empty-cell": {
+    "width": "750",
+    "position": "absolute",
+    "top": "0",
+    "bottom": "88",
+    "left": "0",
+    "right": "0",
+    "zIndex": 9999,
+    "alignItems": "center",
+    "justifyContent": "center"
+  },
+  "btn-position": {
+    "position": "absolute",
+    "right": "30",
+    "top": "60",
+    "width": "128",
+    "height": "64"
+  },
+  "wait": {
+    "position": "absolute",
+    "right": "30",
+    "top": "60",
+    "width": "128",
+    "height": "60",
+    "justifyContent": "center",
+    "alignItems": "center"
+  },
+  "wait-text": {
+    "fontSize": "28",
+    "color": "#b2b2b2"
+  }
+}
+
+/***/ }),
+
+/***/ 8:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var platform = weex.config.env.platform;
+
+var isWeb = (typeof window === 'undefined' ? 'undefined' : _typeof(window)) === 'object' && platform.toLowerCase() === 'web';
+var bbc = new BroadcastChannel('game-list');
+exports.default = {
+    components: {},
+    data: function data() {
+        return {
+            avatarUrl: 'http://placeholder.qiniudn.com/100x100',
+            photoUrl: 'http://placeholder.qiniudn.com/750x422',
+            linkImg: {
+                up: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/up.png',
+                down: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/down.png',
+                hold: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/hold.png',
+                stared: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/stared.png',
+                star: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/star.png',
+                placeholderImg: 'https://raw.githubusercontent.com/acoursecode/weex-ui-developer-demo/master/dist/assets/image/game.png'
+            },
+            isDownload: false,
+            btnProgress: 0,
+            btnProgressText: this.isDownload ? '0%' : '下载'
+        };
+    },
+
+
+    computed: {
+        downloadBtnClass: function downloadBtnClass() {
+            return this.isDownload ? ['ui-btn', 'ui-btn-primary', 'ui-btn-progress'] : ['ui-btn'];
+        },
+        downloadBtnTextClass: function downloadBtnTextClass() {
+            return this.isDownload ? ['ui-btn-text', 'btn-progress-text'] : ['ui-btn-text'];
+        },
+        positionStyle: function positionStyle() {
+            return weex.config.env.platform == 'android' ? 'absolute' : 'fixed';
+        }
+    },
+    methods: {
+        sliderChanged: function sliderChanged(e) {
+            bbc.postMessage({ currentPage: e.index });
+        },
+        downloadGame: function downloadGame() {
+            var self = this;
+            var btnWidth = isWeb ? 68 : 136;
+            self.isDownload = true;
+            self.btnProgressText = self.isDownload ? '0%' : '下载';
+            var run = setInterval(function () {
+                self.btnProgress += 4;
+                self.btnProgressText = parseInt(self.btnProgress / btnWidth * 100) + '%';
+                if (self.btnProgress == btnWidth) {
+                    self.btnProgress = 0;
+                    self.isDownload = false;
+                    self.btnProgressText = '下载';
+                    clearInterval(run);
+                }
+            }, 50);
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 9:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('div', {
-    staticClass: ["header-bar"]
-  }, [_c('text', {
-    staticClass: ["title"]
-  }, [_vm._v("Demo")]), (_vm.currentPage != 'index') ? _c('div', {
-    staticClass: ["back-btn"],
+  return _c('slider', {
+    staticClass: ["slider"],
     on: {
-      "click": function($event) {
-        _vm.switchPage('index')
-      }
+      "change": _vm.sliderChanged
     }
-  }, [_c('text', {
-    staticClass: ["back-btn-txt"]
-  }, [_vm._v(" < 返回")])]) : _vm._e()]), _c('div', {
-    staticClass: ["header-bar-placeholder"]
-  }), (_vm.currentPage == 'index') ? _c('scroller', {
-    staticClass: ["scroller"]
-  }, [_c('text', {
-    staticClass: ["h1"]
-  }, [_vm._v("与Web开发的差异")]), _c('div', {
-    staticClass: ["link-list"]
-  }, [_c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo12A')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link"]
-  }, [_vm._v("Flex布局")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])]), _c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo12B')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link"]
-  }, [_vm._v("图片 & icon")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])]), _c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo12C')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link"]
-  }, [_vm._v("定位")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])]), _c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo13A')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link"]
-  }, [_vm._v("生命周期")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])]), _c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo13B')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link"]
-  }, [_vm._v("组件嵌套 & 私有样式")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])]), _c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo14')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link", "last"]
-  }, [_vm._v("完整案例")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])])]), _c('text', {
-    staticClass: ["h1"]
-  }, [_vm._v("进阶")]), _c('div', {
-    staticClass: ["link-list"]
-  }, [_c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo2')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link"]
-  }, [_vm._v("高精度还原UI")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])]), _c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo21')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link"]
-  }, [_vm._v("基础动画")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])]), _c('div', {
-    on: {
-      "click": function($event) {
-        _vm.switchPage('demo22')
-      }
-    }
-  }, [_c('text', {
-    staticClass: ["link", "last"]
-  }, [_vm._v("高性能交互动画")]), _c('text', {
-    staticClass: ["icon-arrow"]
-  }, [_vm._v("")])])])]) : _vm._e(), (_vm.currentPage == 'demo12A') ? _c('Demo12A', {
-    ref: "demo12A"
-  }) : _vm._e(), (_vm.currentPage == 'demo12B') ? _c('Demo12B', {
-    ref: "demo12B"
-  }) : _vm._e(), (_vm.currentPage == 'demo12C') ? _c('Demo12C', {
-    ref: "demo12C"
-  }) : _vm._e(), (_vm.currentPage == 'demo13A') ? _c('Demo13A', {
-    ref: "demo13A"
-  }) : _vm._e(), (_vm.currentPage == 'demo13B') ? _c('Demo13B', {
-    ref: "demo13B"
-  }) : _vm._e(), (_vm.currentPage == 'demo14') ? _c('Demo14', {
-    ref: "demo14"
-  }) : _vm._e(), (_vm.currentPage == 'demo21') ? _c('Demo21', {
-    ref: "demo21"
-  }) : _vm._e(), (_vm.currentPage == 'demo22') ? _c('Demo22', {
-    ref: "demo22"
-  }) : _vm._e(), (_vm.currentPage == 'demo23') ? _c('Demo23', {
-    ref: "demo23"
-  }) : _vm._e(), (_vm.currentPage == 'demo24') ? _c('Demo24', {
-    ref: "demo24"
-  }) : _vm._e()], 1)
+  }, _vm._l((7), function(v, i) {
+    return _c('list', {
+      staticClass: ["ui-list"]
+    }, _vm._l((16), function(item, index) {
+      return _c('cell', {
+        staticClass: ["ui-list-cell"],
+        appendAsTree: true,
+        attrs: {
+          "append": "tree"
+        }
+      }, [_c('div', {
+        staticClass: ["list-rank"]
+      }, [_c('text', {
+        staticClass: ["list-rank-num"]
+      }, [_vm._v(_vm._s(1 + index))]), (false) ? _c('div', [(index == 0) ? _c('image', {
+        staticClass: ["rank-icon", "rank-up"],
+        attrs: {
+          "src": _vm.linkImg.up
+        }
+      }) : _vm._e(), (index == 1) ? _c('image', {
+        staticClass: ["rank-icon", "rank-down"],
+        attrs: {
+          "src": _vm.linkImg.down
+        }
+      }) : _vm._e(), (index > 1) ? _c('image', {
+        staticClass: ["rank-icon", "rank-hold"],
+        attrs: {
+          "src": _vm.linkImg.hold
+        }
+      }) : _vm._e()]) : _vm._e()]), _c('div', {
+        staticClass: ["ui-list-inner"]
+      }, [_c('div', {
+        staticClass: ["ui-list-thumb"]
+      }, [_c('image', {
+        staticClass: ["ui-list-img"],
+        attrs: {
+          "src": _vm.linkImg.placeholderImg
+        }
+      })]), _c('div', {
+        staticClass: ["ui-list-info"]
+      }, [_c('text', {
+        staticClass: ["info-h3"]
+      }, [_vm._v("全民飞机全民飞机全民飞机全民飞机全民飞机")]), _c('div', {
+        staticClass: ["star-wrap"]
+      }, [_vm._l((4), function(s, j) {
+        return _c('image', {
+          staticClass: ["star"],
+          attrs: {
+            "src": _vm.linkImg.stared
+          }
+        })
+      }), _c('image', {
+        staticClass: ["star"],
+        attrs: {
+          "src": _vm.linkImg.star
+        }
+      }), _c('text', {
+        staticClass: ["scroe-text"]
+      }, [_vm._v("9.2分")])], 2), _c('text', {
+        staticClass: ["info-p"]
+      }, [_vm._v("293881人已安装")])]), (index == 3) ? _c('div', {
+        staticClass: ["wait"]
+      }, [_c('text', {
+        staticClass: ["wait-text"]
+      }, [_vm._v("敬请期待")])]) : _c('div', {
+        staticClass: ["btn-position"]
+      }, [(index != 2) ? _c('div', {
+        staticClass: ["ui-btn"]
+      }, [_c('text', {
+        staticClass: ["ui-btn-text"]
+      }, [_vm._v("下载")])]) : _vm._e(), (index === 2) ? _c('div', {
+        class: _vm.downloadBtnClass,
+        on: {
+          "click": _vm.downloadGame
+        }
+      }, [(_vm.isDownload) ? _c('div', {
+        staticClass: ["btn-progress-inner"]
+      }) : _vm._e(), (_vm.isDownload) ? _c('div', {
+        staticClass: ["btn-progress-bar"],
+        style: {
+          width: _vm.btnProgress + 'px'
+        }
+      }) : _vm._e(), _c('text', {
+        class: _vm.downloadBtnTextClass
+      }, [_vm._v(_vm._s(_vm.btnProgressText))])]) : _vm._e()])])])
+    }))
+  }))
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
 /***/ })
-/******/ ]);
+
+/******/ });

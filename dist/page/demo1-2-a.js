@@ -62,12 +62,142 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 58);
+/******/ 	return __webpack_require__(__webpack_require__.s = 298);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 10:
+/***/ 22:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(23)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(24)
+
+/* template */
+var __vue_template__ = __webpack_require__(25)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/page/demo1-2-a.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-15658510"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 23:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "h2": {
+    "fontSize": "50",
+    "textAlign": "center",
+    "height": "110",
+    "lineHeight": "110"
+  },
+  "grid-3": {
+    "paddingTop": "20",
+    "flexDirection": "row"
+  },
+  "grid-item-web": {
+    "width": 33.33
+  },
+  "grid-item": {
+    "textAlign": "center",
+    "width": "247",
+    "height": "247",
+    "lineHeight": "247",
+    "fontSize": "100",
+    "backgroundColor": "#000000",
+    "color": "#ffffff",
+    "marginBottom": "4"
+  },
+  "grid-3-normal": {
+    "marginLeft": "-4"
+  },
+  "grid-item-normal": {
+    "marginLeft": "4"
+  },
+  "grid-3-equal": {
+    "marginLeft": 0,
+    "justifyContent": "space-between"
+  },
+  "list-row": {
+    "height": "188",
+    "position": "relative",
+    "paddingLeft": "188",
+    "borderTopWidth": "1",
+    "borderTopStyle": "solid",
+    "borderTopColor": "#aaaaaa",
+    "borderBottomWidth": "1",
+    "borderBottomStyle": "solid",
+    "borderBottomColor": "#aaaaaa",
+    "flexDirection": "row",
+    "justifyContent": "space-between",
+    "alignItems": "center"
+  },
+  "list-row-avatar": {
+    "width": "140",
+    "height": "140",
+    "position": "absolute",
+    "left": "24",
+    "top": "24"
+  },
+  "list-row-btn": {
+    "width": "120",
+    "height": "60",
+    "textAlign": "center",
+    "lineHeight": "60",
+    "fontSize": "28",
+    "borderRadius": "4",
+    "marginRight": "24",
+    "borderWidth": "1",
+    "borderStyle": "solid",
+    "borderColor": "#aaaaaa"
+  },
+  "list-row-title": {
+    "fontSize": "30"
+  },
+  "list-row-subtitle": {
+    "fontSize": "24",
+    "color": "#777777"
+  },
+  "grid-3-equal-wrap": {
+    "flexWrap": "wrap",
+    "height": "750"
+  }
+}
+
+/***/ }),
+
+/***/ 24:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -139,7 +269,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 11:
+/***/ 25:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -234,13 +364,13 @@ module.exports.render._withStripped = true
 
 /***/ }),
 
-/***/ 58:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _demo12A = __webpack_require__(8);
+var _demo12A = __webpack_require__(22);
 
 var _demo12A2 = _interopRequireDefault(_demo12A);
 
@@ -248,136 +378,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _demo12A2.default.el = '#root';
 new Vue(_demo12A2.default);
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(9)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(10)
-
-/* template */
-var __vue_template__ = __webpack_require__(11)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/emohacker/weex/weex-ui-developer/src/page/demo1-2-a.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-15658510"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports) {
-
-module.exports = {
-  "h2": {
-    "fontSize": "50",
-    "textAlign": "center",
-    "height": "110",
-    "lineHeight": "110"
-  },
-  "grid-3": {
-    "paddingTop": "20",
-    "flexDirection": "row"
-  },
-  "grid-item-web": {
-    "width": 33.33
-  },
-  "grid-item": {
-    "textAlign": "center",
-    "width": "247",
-    "height": "247",
-    "lineHeight": "247",
-    "fontSize": "100",
-    "backgroundColor": "#000000",
-    "color": "#ffffff",
-    "marginBottom": "4"
-  },
-  "grid-3-normal": {
-    "marginLeft": "-4"
-  },
-  "grid-item-normal": {
-    "marginLeft": "4"
-  },
-  "grid-3-equal": {
-    "marginLeft": 0,
-    "justifyContent": "space-between"
-  },
-  "list-row": {
-    "height": "188",
-    "position": "relative",
-    "paddingLeft": "188",
-    "borderTopWidth": "1",
-    "borderTopStyle": "solid",
-    "borderTopColor": "#aaaaaa",
-    "borderBottomWidth": "1",
-    "borderBottomStyle": "solid",
-    "borderBottomColor": "#aaaaaa",
-    "flexDirection": "row",
-    "justifyContent": "space-between",
-    "alignItems": "center"
-  },
-  "list-row-avatar": {
-    "width": "140",
-    "height": "140",
-    "position": "absolute",
-    "left": "24",
-    "top": "24"
-  },
-  "list-row-btn": {
-    "width": "120",
-    "height": "60",
-    "textAlign": "center",
-    "lineHeight": "60",
-    "fontSize": "28",
-    "borderRadius": "4",
-    "marginRight": "24",
-    "borderWidth": "1",
-    "borderStyle": "solid",
-    "borderColor": "#aaaaaa"
-  },
-  "list-row-title": {
-    "fontSize": "30"
-  },
-  "list-row-subtitle": {
-    "fontSize": "24",
-    "color": "#777777"
-  },
-  "grid-3-equal-wrap": {
-    "flexWrap": "wrap",
-    "height": "750"
-  }
-}
 
 /***/ })
 
